@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>New York · Just Between Us</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+    :root {
+      --cream: #f6f0e7;
+      --ivory: #fbf8f3;
+      --wine: #591c2a;
+      --brown: #332822;
+      --brown-light: #75665d;
+      --gold: #b4965a;
+      --line: #d9cec0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 9px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    header {
+      text-align: center;
+      padding: 48px 30px 35px;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--brown-light);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 500;
+      letter-spacing: -3px;
+      line-height: .85;
+      color: var(--wine);
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 22px;
+      color: var(--brown-light);
+    }
+
+    nav {
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 34px;
+      padding: 17px 20px;
+    }
+
+    nav a {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--wine);
+    }
+
+    /* INTRO */
+
+    .intro {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 75px 30px 50px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: clamp(60px, 10vw, 110px);
+      font-weight: 500;
+      line-height: .8;
+      letter-spacing: -4px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: 28px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.4;
+      color: var(--brown-light);
+    }
+
+    /* CATEGORY NAV */
+
+    .categories {
+      max-width: 1050px;
+      margin: 0 auto 65px;
+      padding: 0 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .category {
+      border: 1px solid var(--line);
+      background: var(--ivory);
+      padding: 13px 22px;
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .category:hover {
+      background: var(--wine);
+      border-color: var(--wine);
+      color: var(--cream);
+    }
+
+    /* LITTLE BLACK BOOK */
+
+    .places {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 30px 100px;
+    }
+
+    .section-header {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 500;
+      color: var(--wine);
+    }
+
+    .section-header span {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .place {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      margin-bottom: 18px;
+      padding: 35px;
+      display: grid;
+      grid-template-columns: 70px 1fr 220px;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .place-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px;
+      color: var(--gold);
+    }
+
+    .place-type {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 9px;
+    }
+
+    .place h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 500;
+      color: var(--wine);
+      line-height: .95;
+      margin-bottom: 12px;
+    }
+
+    .place-description {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--brown-light);
+      max-width: 600px;
+    }
+
+    .place-meta {
+      border-left: 1px solid var(--line);
+      padding-left: 22px;
+    }
+
+    .meta-row {
+      margin-bottom: 15px;
+    }
+
+    .label {
+      display: block;
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+    }
+
+    /* FEATURED */
+
+    .featured {
+      max-width: 1100px;
+      margin: 0 auto 70px;
+      padding: 0 30px;
+    }
+
+    .featured-card {
+      background: var(--wine);
+      color: var(--cream);
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .featured-image {
+      min-height: 330px;
+      background: #76545a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #eadfd4;
+    }
+
+    .featured-card .place-type {
+      color: #d9bda0;
+    }
+
+    .featured-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--cream);
+      font-size: 55px;
+      font-weight: 500;
+      line-height: .9;
+      margin-bottom: 18px;
+    }
+
+    .featured-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      line-height: 1.4;
+      color: #eadfd4;
+      margin-bottom: 25px;
+    }
+
+    .featured-card .read {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #d9bda0;
+      padding-bottom: 5px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #eadbc8;
+    }
+
+    footer p {
+      margin-top: 14px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bdaea1;
+    }
+
+    @media (max-width: 750px) {
+
+      nav {
+        gap: 17px;
+      }
+
+      .featured-card {
+        grid-template-columns: 1fr;
+        padding: 35px;
+      }
+
+      .featured-image {
+        min-height: 270px;
+      }
+
+      .place {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .place-meta {
+        border-left: none;
+        border-top: 1px solid var(--line);
+        padding-left: 0;
+        padding-top: 20px;
+      }
+
+      .place h3 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Private Record · New York · Est. 2026
+  </div>
+
+
+  <header>
+
+    <div class="location">
+      Manhattan · The Little Black Book
+    </div>
+
+    <div class="logo">
+      Just Between Us
+    </div>
+
+    <div class="tagline">
+      You didn't hear it from me.
+    </div>
+
+  </header>
+
+
+  <nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="encounters.html">
+      The Encounters
+    </a>
+
+    <a href="after-hours.html">
+      After Hours
+    </a>
+
+    <a href="debrief.html">
+      The Debrief
+    </a>
+
+    <a href="new-york.html">
+      New York
+    </a>
+
+    <a href="#">
+      The Receipts
+    </a>
+
+    <a href="#">
+      The Archive
+    </a>
+
+  </nav>
+
+
+  <section class="intro">
+
+    <div class="eyebrow">
+      The little black book
+    </div>
+
+    <h1>
+      New York
+    </h1>
+
+    <p>
+      Restaurants, bars, date spots, late nights,
+      hidden gems and places worth remembering.
+    </p>
+
+  </section>
+
+
+  <div class="categories">
+
+    <div class="category">All Places</div>
+    <div class="category">Dinner</div>
+    <div class="category">Drinks</div>
+    <div class="category">Date Spots</div>
+    <div class="category">After Dark</div>
+    <div class="category">Daytime</div>
+    <div class="category">Need to Try</div>
+
+  </div>
+
+
+  <section class="featured">
+
+    <div class="featured-card">
+
+      <div class="featured-image">
+        Your NYC photograph goes here
+      </div>
+
+      <div>
+
+        <div class="place-type">
+          Place No. 001 · Current Favorite
+        </div>
+
+        <h2>
+          The Place You Keep Going Back To
+        </h2>
+
+        <p>
+          The kind of place that somehow works for
+          dinner, drinks, dates, birthdays and "let's just
+          go somewhere."
+        </p>
+
+        <a href="#" class="read">
+          Open the file →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="places">
+
+    <div class="section-header">
+
+      <h2>
+        The Little Black Book
+      </h2>
+
+      <span>
+        Places worth knowing
+      </span>
+
+    </div>
+
+
+    <article class="place">
+
+      <div class="place-number">
+        001
+      </div>
+
+      <div>
+
+        <div class="place-type">
+          Dinner · Date Spot
+        </div>
+
+        <h3>
+          The Perfect First Date
+        </h3>
+
+        <p class="place-description">
+          Low lighting, good cocktails, enough noise that
+          you don't feel like everyone is listening.
+        </p>
+
+      </div>
+
+      <div class="place-meta">
+
+        <div class="meta-row">
+          <span class="label">Neighborhood</span>
+          <span class="value">West Village</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Vibe</span>
+          <span class="value">Romantic</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Return?</span>
+          <span class="value">Absolutely.</span>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <article class="place">
+
+      <div class="place-number">
+        002
+      </div>
+
+      <div>
+
+        <div class="place-type">
+          Drinks · After Dark
+        </div>
+
+        <h3>
+          Somewhere for One More
+        </h3>
+
+        <p class="place-description">
+          The bar you suggest when dinner is over but
+          going home is clearly not happening yet.
+        </p>
+
+      </div>
+
+      <div class="place-meta">
+
+        <div class="meta-row">
+          <span class="label">Neighborhood</span>
+          <span class="value">SoHo</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Vibe</span>
+          <span class="value">Dangerous</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Return?</span>
+          <span class="value">Obviously.</span>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <article class="place">
+
+      <div class="place-number">
+        003
+      </div>
+
+      <div>
+
+        <div class="place-type">
+          Daytime · Coffee
+        </div>
+
+        <h3>
+          The Sunday Reset
+        </h3>
+
+        <p class="place-description">
+          Coffee, something carb-heavy and absolutely
+          no discussion of what happened last night.
+        </p>
+
+      </div>
+
+      <div class="place-meta">
+
+        <div class="meta-row">
+          <span class="label">Neighborhood</span>
+          <span class="value">West Village</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Vibe</span>
+          <span class="value">Quiet</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Return?</span>
+          <span class="value">Every Sunday.</span>
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <article class="place">
+
+      <div class="place-number">
+        004
+      </div>
+
+      <div>
+
+        <div class="place-type">
+          Need to Try
+        </div>
+
+        <h3>
+          On the List
+        </h3>
+
+        <p class="place-description">
+          A running list of places I've heard about,
+          saved on Instagram and have yet to investigate.
+        </p>
+
+      </div>
+
+      <div class="place-meta">
+
+        <div class="meta-row">
+          <span class="label">Status</span>
+          <span class="value">Pending</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Priority</span>
+          <span class="value">High</span>
+        </div>
+
+        <div class="meta-row">
+          <span class="label">Next Step</span>
+          <span class="value">Go there.</span>
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <footer>
+
+    <h2>
+      Just Between Us.
+    </h2>
+
+    <p>
+      New York · Dating · Life · Other Developments
+    </p>
+
+  </footer>
+
+</body>
+</html>
