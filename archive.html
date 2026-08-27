@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Archive · Just Between Us</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+    :root {
+      --cream: #f6f0e7;
+      --ivory: #fbf8f3;
+      --wine: #591c2a;
+      --brown: #332822;
+      --brown-light: #75665d;
+      --gold: #b4965a;
+      --line: #d9cec0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 9px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    header {
+      text-align: center;
+      padding: 48px 30px 35px;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--brown-light);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 500;
+      letter-spacing: -3px;
+      line-height: .85;
+      color: var(--wine);
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 22px;
+      color: var(--brown-light);
+    }
+
+    nav {
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 34px;
+      padding: 17px 20px;
+    }
+
+    nav a {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--wine);
+    }
+
+    /* INTRO */
+
+    .intro {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 80px 30px 55px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: clamp(58px, 9vw, 100px);
+      font-weight: 500;
+      line-height: .8;
+      letter-spacing: -3px;
+    }
+
+    .intro p {
+      max-width: 620px;
+      margin: 28px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.4;
+      color: var(--brown-light);
+    }
+
+    /* ARCHIVE */
+
+    .archive {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 30px 100px;
+    }
+
+    .archive-header {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      margin-bottom: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .archive-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 500;
+      color: var(--wine);
+    }
+
+    .archive-header span {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    /* YEAR */
+
+    .year {
+      margin-bottom: 65px;
+    }
+
+    .year-title {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 10px;
+    }
+
+    .year-title h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 48px;
+      font-weight: 500;
+    }
+
+    .year-line {
+      height: 1px;
+      background: var(--line);
+      flex: 1;
+    }
+
+    /* MONTH */
+
+    .month {
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      padding: 28px 0;
+    }
+
+    .month-name {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-top: 4px;
+    }
+
+    .entries {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 75px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .entry-date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: var(--brown-light);
+    }
+
+    .entry h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 29px;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .entry p {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--brown-light);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .entry-type {
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 9px;
+    }
+
+    /* QUOTE */
+
+    .quote {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 65px 35px;
+      margin: 80px 0 0;
+    }
+
+    .quote p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 31px;
+      line-height: 1.15;
+      font-style: italic;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 20px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #d9bda0;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #eadbc8;
+    }
+
+    footer p {
+      margin-top: 14px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bdaea1;
+    }
+
+    @media (max-width: 750px) {
+
+      nav {
+        gap: 17px;
+      }
+
+      .month {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .entry {
+        grid-template-columns: 55px 1fr;
+      }
+
+      .entry h4 {
+        font-size: 25px;
+      }
+
+      .quote p {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Private Record · New York · Est. 2026
+  </div>
+
+
+  <header>
+
+    <div class="location">
+      Manhattan · The Records
+    </div>
+
+    <div class="logo">
+      Just Between Us
+    </div>
+
+    <div class="tagline">
+      You didn't hear it from me.
+    </div>
+
+  </header>
+
+
+  <nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="encounters.html">
+      The Encounters
+    </a>
+
+    <a href="after-hours.html">
+      After Hours
+    </a>
+
+    <a href="debrief.html">
+      The Debrief
+    </a>
+
+    <a href="new-york.html">
+      New York
+    </a>
+
+    <a href="receipts.html">
+      The Receipts
+    </a>
+
+    <a href="archive.html">
+      The Archive
+    </a>
+
+  </nav>
+
+
+  <section class="intro">
+
+    <div class="eyebrow">
+      Everything gets documented eventually
+    </div>
+
+    <h1>
+      The Archive
+    </h1>
+
+    <p>
+      A chronological record of the people, places,
+      nights, decisions and other developments.
+    </p>
+
+  </section>
+
+
+  <section class="archive">
+
+    <div class="archive-header">
+
+      <h2>
+        The Records
+      </h2>
+
+      <span>
+        Nothing important was forgotten
+      </span>
+
+    </div>
+
+
+    <!-- 2026 -->
+
+    <div class="year">
+
+      <div class="year-title">
+
+        <h3>
+          2026
+        </h3>
+
+        <div class="year-line"></div>
+
+      </div>
+
+
+      <!-- AUGUST -->
+
+      <div class="month">
+
+        <div class="month-name">
+          August
+        </div>
+
+        <div class="entries">
+
+
+          <article class="entry">
+
+            <div class="entry-date">
+              27
+            </div>
+
+            <div>
+
+              <h4>
+                The Beginning
+              </h4>
+
+              <p>
+                Just Between Us officially begins.
+              </p>
+
+              <div class="entry-type">
+                Site · Beginning
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="entry">
+
+            <div class="entry-date">
+              26
+            </div>
+
+            <div>
+
+              <h4>
+                A Night Worth Remembering
+              </h4>
+
+              <p>
+                One of those nights that deserves its
+                own entry.
+              </p>
+
+              <div class="entry-type">
+                After Hours
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="entry">
+
+            <div class="entry-date">
+              24
+            </div>
+
+            <div>
+
+              <h4>
+                The One We Discussed for Three Hours
+              </h4>
+
+              <p>
+                Naturally, the group chat had thoughts.
+              </p>
+
+              <div class="entry-type">
+                Debrief · Classified
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- JULY -->
+
+      <div class="month">
+
+        <div class="month-name">
+          July
+        </div>
+
+        <div class="entries">
+
+
+          <article class="entry">
+
+            <div class="entry-date">
+              18
+            </div>
+
+            <div>
+
+              <h4>
+                The Plot Thickens
+              </h4>
+
+              <p>
+                Details intentionally withheld.
+              </p>
+
+              <div class="entry-type">
+                Encounters
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="entry">
+
+            <div class="entry-date">
+              11
+            </div>
+
+            <div>
+
+              <h4>
+                We Should Probably Talk About This
+              </h4>
+
+              <p>
+                We did. Extensively.
+              </p>
+
+              <div class="entry-type">
+                Debrief
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FUTURE YEARS -->
+
+    <div class="year">
+
+      <div class="year-title">
+
+        <h3>
+          Future Records
+        </h3>
+
+        <div class="year-line"></div>
+
+      </div>
+
+      <div class="month">
+
+        <div class="month-name">
+          TBD
+        </div>
+
+        <div class="entries">
+
+          <article class="entry">
+
+            <div class="entry-date">
+              —
+            </div>
+
+            <div>
+
+              <h4>
+                More to Come
+              </h4>
+
+              <p>
+                The archive is open.
+              </p>
+
+              <div class="entry-type">
+                Pending
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="quote">
+
+      <p>
+        "I can't believe we used to think this
+        was a good idea."
+      </p>
+
+      <span>
+        Probably worth documenting anyway
+      </span>
+
+    </div>
+
+
+  </section>
+
+
+  <footer>
+
+    <h2>
+      Just Between Us.
+    </h2>
+
+    <p>
+      New York · Dating · Life · Other Developments
+    </p>
+
+  </footer>
+
+</body>
+</html>
