@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The British Agent · Just Between Us</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+    :root {
+      --cream: #f6f0e7;
+      --ivory: #fbf8f3;
+      --wine: #591c2a;
+      --brown: #332822;
+      --brown-light: #75665d;
+      --gold: #b4965a;
+      --line: #d9cec0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 9px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    header {
+      text-align: center;
+      padding: 48px 30px 35px;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--brown-light);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 500;
+      letter-spacing: -3px;
+      line-height: .85;
+      color: var(--wine);
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 22px;
+      color: var(--brown-light);
+    }
+
+    nav {
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 34px;
+      padding: 17px 20px;
+    }
+
+    nav a {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--wine);
+    }
+
+    /* STORY HEADER */
+
+    .story-header {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 95px 30px 60px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 25px;
+    }
+
+    .story-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(65px, 10vw, 120px);
+      font-weight: 500;
+      line-height: .82;
+      letter-spacing: -4px;
+      color: var(--wine);
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--brown-light);
+      margin-top: 30px;
+    }
+
+    .meta {
+      margin-top: 30px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    /* STORY */
+
+    .story {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 30px 100px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section-label {
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 39px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      border-left: 2px solid var(--gold);
+      padding: 15px 25px;
+      margin: 30px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px;
+      font-style: italic;
+      color: var(--wine);
+    }
+
+    /* VERDICT */
+
+    .verdict {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 70px 30px;
+      margin: 20px 0 0;
+    }
+
+    .verdict-label {
+      font-size: 8px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #d9bda0;
+      margin-bottom: 15px;
+    }
+
+    .rating {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 110px;
+      line-height: .8;
+      font-weight: 500;
+    }
+
+    .rating span {
+      font-size: 40px;
+    }
+
+    .verdict-text {
+      max-width: 550px;
+      margin: 30px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.4;
+    }
+
+    .verdict-details {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      margin-top: 45px;
+      flex-wrap: wrap;
+    }
+
+    .detail-label {
+      display: block;
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #d9bda0;
+      margin-bottom: 8px;
+    }
+
+    .detail-answer {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #eadbc8;
+    }
+
+    footer p {
+      margin-top: 14px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bdaea1;
+    }
+
+    @media (max-width: 750px) {
+
+      nav {
+        gap: 17px;
+      }
+
+      .story-header {
+        padding-top: 70px;
+      }
+
+      .story-header h1 {
+        letter-spacing: -2px;
+      }
+
+      .section h2 {
+        font-size: 34px;
+      }
+
+      .section p {
+        font-size: 19px;
+      }
+
+      .rating {
+        font-size: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Private Record · New York · Est. 2026
+  </div>
+
+  <header>
+
+    <div class="location">
+      Manhattan · The Encounters
+    </div>
+
+    <div class="logo">
+      Just Between Us
+    </div>
+
+    <div class="tagline">
+      You didn't hear it from me.
+    </div>
+
+  </header>
+
+  <nav>
+
+    <a href="../index.html">Home</a>
+
+    <a href="../encounters.html">The Encounters</a>
+
+    <a href="../after-hours.html">After Hours</a>
+
+    <a href="../debrief.html">The Debrief</a>
+
+    <a href="../new-york.html">New York</a>
+
+    <a href="../receipts.html">The Receipts</a>
+
+    <a href="../archive.html">The Archive</a>
+
+  </nav>
+
+
+  <section class="story-header">
+
+    <div class="eyebrow">
+      Encounter No. 001
+    </div>
+
+    <h1>
+      The British Agent
+    </h1>
+
+    <div class="subtitle">
+      Met on Tinder. He had an accent. Things escalated.
+    </div>
+
+    <div class="meta">
+      August 2026 · New York
+    </div>
+
+  </section>
+
+
+  <main class="story">
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Setup
+      </div>
+
+      <p>
+        Tinder.
+      </p>
+
+      <p>
+        Yes, I know.
+      </p>
+
+      <p>
+        I showed up fashionably late, which would have been
+        perfectly chic if I had actually entered the correct door.
+        Instead, I walked into the wrong entrance and ended up
+        standing in a lobby while The British Agent was apparently
+        outside the other door, wondering where the hell I was.
+      </p>
+
+      <p>
+        Eventually, he came into the lobby to find me.
+      </p>
+
+      <p>
+        First impression: <strong>hot. Tall. Twenty-nine. Older man. Love.</strong>
+      </p>
+
+      <p>
+        He was dressed a little more casually than I expected,
+        but whatever. I liked my outfit, I looked hot and chic,
+        and that's really what matters.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The First Impression
+      </div>
+
+      <div class="highlight">
+        ACCENT. BRITISH.
+      </div>
+
+      <p>
+        Then he opened his mouth.
+      </p>
+
+      <p>
+        I don't even remember what he said.
+      </p>
+
+      <p>
+        British.
+      </p>
+
+      <p>
+        I died inside.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Date
+      </div>
+
+      <p>
+        We got to our table and started talking, and somehow
+        the conversation just kept going.
+      </p>
+
+      <p>
+        Movies. Harry Potter. One Direction. Being British.
+        Life. Me. Him. Everything.
+      </p>
+
+      <p>
+        He was funny, attractive, and genuinely seemed interested
+        in getting to know me, which is always a nice surprise
+        when you meet someone on Tinder.
+      </p>
+
+      <p>
+        And somewhere along the way, we started making out.
+      </p>
+
+      <p>
+        Then we made out again.
+      </p>
+
+      <p>
+        And again.
+      </p>
+
+      <p>
+        I'm not exactly sure when this became the activity of
+        the evening, but I wasn't complaining.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Classified Information
+      </div>
+
+      <p>
+        At some point I asked about his job.
+      </p>
+
+      <p>
+        He told me he couldn't really say.
+      </p>
+
+      <p>
+        Excuse me?
+      </p>
+
+      <p>
+        Apparently it's <strong>government military.</strong>
+      </p>
+
+      <p>
+        He also has a degree in chemistry.
+      </p>
+
+      <p>
+        So naturally my immediate conclusion was:
+      </p>
+
+      <div class="highlight">
+        Is he making bombs?
+      </div>
+
+      <p>
+        I have no evidence to support this theory.
+        But I'm keeping it open.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Hotel Situation
+      </div>
+
+      <p>
+        Eventually he mentioned that he was staying at a hotel
+        because he currently lives in the Hamptons.
+      </p>
+
+      <p>
+        And I immediately thought: <em>Oh, I see where this is going.</em>
+      </p>
+
+      <p>
+        He asked if I wanted to come back with him.
+      </p>
+
+      <p>
+        I told him, essentially, do I look like a girl who goes
+        home with a guy on the first date?
+      </p>
+
+      <p>
+        He asked if that was a bad thing.
+      </p>
+
+      <p>
+        And I said, well... no. But it's not me.
+      </p>
+
+      <p>
+        Then he hit me with:
+      </p>
+
+      <div class="highlight">
+        "I'm a guy. I have to try."
+      </div>
+
+      <p>
+        Ew.
+      </p>
+
+      <p>
+        So I told him:
+      </p>
+
+      <div class="highlight">
+        You don't really.
+      </div>
+
+      <p>
+        He laughed.
+      </p>
+
+      <p>
+        And thankfully, we moved on.
+      </p>
+
+      <p>
+        His hand was on my thigh. There was chemistry.
+        There was temptation.
+      </p>
+
+      <p>
+        But I held the line.
+      </p>
+
+      <p>
+        I am a strong woman.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Exit
+      </div>
+
+      <p>
+        Eventually I told him I had to go.
+      </p>
+
+      <p>
+        He got the check, obviously, and then waited outside
+        with me for my Uber.
+      </p>
+
+      <p>
+        He held my hand.
+      </p>
+
+      <p>
+        I didn't hate it.
+      </p>
+
+      <p>
+        We kissed goodbye, I got into my Uber, and that was that.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Aftermath
+      </div>
+
+      <p>
+        Or so I thought.
+      </p>
+
+      <p>
+        He messaged me to make sure I got home safely.
+      </p>
+
+      <p>
+        Then he asked for my number because, until that point,
+        we'd only been talking on Tinder.
+      </p>
+
+      <p>
+        The next day?
+      </p>
+
+      <div class="highlight">
+        Voice memos.
+      </div>
+
+      <p>
+        Multiple.
+      </p>
+
+      <p>
+        And listen — I know I said we need to make the men chase,
+        but hearing a British man send you a voice memo is a very
+        specific kind of test of character.
+      </p>
+
+      <p>
+        He also wants to see me again.
+      </p>
+
+      <p>
+        Immediately.
+      </p>
+
+      <p>
+        Which brings us to the current situation:
+      </p>
+
+      <p>
+        He is hot.
+      </p>
+
+      <p>
+        He is mysterious.
+      </p>
+
+      <p>
+        He may or may not make bombs.
+      </p>
+
+      <p>
+        He sends voice memos.
+      </p>
+
+      <p>
+        And he wants a second date.
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+  <section class="verdict">
+
+    <div class="verdict-label">
+      The Verdict
+    </div>
+
+    <div class="rating">
+      9<span>/10</span>
+    </div>
+
+    <div class="verdict-text">
+      Points deducted for unclear intentions.
+      Points restored for the accent.
+    </div>
+
+    <div class="verdict-details">
+
+      <div>
+        <span class="detail-label">
+          Would I see him again?
+        </span>
+
+        <span class="detail-answer">
+          Yes.
+        </span>
+      </div>
+
+      <div>
+        <span class="detail-label">
+          Will I immediately be available?
+        </span>
+
+        <span class="detail-answer">
+          Absolutely not.
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <h2>
+      Just Between Us.
+    </h2>
+
+    <p>
+      New York · Dating · Life · Other Developments
+    </p>
+
+  </footer>
+
+</body>
+</html>
