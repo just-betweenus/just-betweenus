@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Debrief · Just Between Us</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+    :root {
+      --cream: #f6f0e7;
+      --ivory: #fbf8f3;
+      --wine: #591c2a;
+      --brown: #332822;
+      --brown-light: #75665d;
+      --gold: #b4965a;
+      --line: #d9cec0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 9px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    header {
+      text-align: center;
+      padding: 48px 30px 35px;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--brown-light);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 500;
+      letter-spacing: -3px;
+      line-height: .85;
+      color: var(--wine);
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 22px;
+      color: var(--brown-light);
+    }
+
+    nav {
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 34px;
+      padding: 17px 20px;
+    }
+
+    nav a {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--wine);
+    }
+
+    /* INTRO */
+
+    .intro {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 80px 30px 55px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: clamp(58px, 9vw, 100px);
+      font-weight: 500;
+      line-height: .8;
+      letter-spacing: -3px;
+    }
+
+    .intro p {
+      max-width: 620px;
+      margin: 28px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.4;
+      color: var(--brown-light);
+    }
+
+    /* FEATURE */
+
+    .feature {
+      max-width: 1000px;
+      margin: 0 auto 80px;
+      padding: 0 30px;
+    }
+
+    .feature-card {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      padding: 65px;
+      position: relative;
+    }
+
+    .feature-card::before {
+      content: "THE CURRENT POSITION";
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    .category {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .feature-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 58px;
+      line-height: .9;
+      font-weight: 500;
+      max-width: 750px;
+      margin-bottom: 25px;
+    }
+
+    .feature-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.45;
+      color: var(--brown-light);
+      max-width: 700px;
+      margin-bottom: 28px;
+    }
+
+    .read {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--wine);
+      border-bottom: 1px solid var(--wine);
+      padding-bottom: 6px;
+    }
+
+    /* POSTS */
+
+    .posts {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 30px 100px;
+    }
+
+    .section-title {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .section-title h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 42px;
+      font-weight: 500;
+    }
+
+    .section-title span {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .post {
+      border-top: 1px solid var(--line);
+      padding: 38px 0;
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 30px;
+    }
+
+    .post-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px;
+      color: var(--gold);
+    }
+
+    .post h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 38px;
+      line-height: .95;
+      font-weight: 500;
+      margin-bottom: 13px;
+    }
+
+    .post p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--brown-light);
+      max-width: 680px;
+      margin-bottom: 20px;
+    }
+
+    .date {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #eadbc8;
+    }
+
+    footer p {
+      margin-top: 14px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bdaea1;
+    }
+
+    @media (max-width: 750px) {
+
+      nav {
+        gap: 17px;
+      }
+
+      .feature-card {
+        padding: 45px 30px;
+      }
+
+      .feature-card h2 {
+        font-size: 45px;
+      }
+
+      .post {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .post h3 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Private Record · New York · Est. 2026
+  </div>
+
+  <header>
+
+    <div class="location">
+      Manhattan · Opinions
+    </div>
+
+    <div class="logo">
+      Just Between Us
+    </div>
+
+    <div class="tagline">
+      You didn't hear it from me.
+    </div>
+
+  </header>
+
+
+  <nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="encounters.html">
+      The Encounters
+    </a>
+
+    <a href="after-hours.html">
+      After Hours
+    </a>
+
+    <a href="debrief.html">
+      The Debrief
+    </a>
+
+    <a href="#">
+      New York
+    </a>
+
+    <a href="#">
+      The Receipts
+    </a>
+
+    <a href="#">
+      The Archive
+    </a>
+
+  </nav>
+
+
+  <section class="intro">
+
+    <div class="eyebrow">
+      Editorial
+    </div>
+
+    <h1>
+      The Debrief
+    </h1>
+
+    <p>
+      An ongoing investigation into men, dating,
+      New York, and other matters of questionable importance.
+    </p>
+
+  </section>
+
+
+  <section class="feature">
+
+    <article class="feature-card">
+
+      <div class="category">
+        The Debrief · 001
+      </div>
+
+      <h2>
+        Is He Actually Busy, Or Does He Just Not Like You?
+      </h2>
+
+      <p>
+        After extensive research, several unnecessary
+        conversations, and absolutely no formal qualifications,
+        I have some thoughts.
+      </p>
+
+      <a href="#" class="read">
+        Read the full debrief →
+      </a>
+
+    </article>
+
+  </section>
+
+
+  <section class="posts">
+
+    <div class="section-title">
+
+      <h2>
+        Recent Findings
+      </h2>
+
+      <span>
+        Peer reviewed by the group chat
+      </span>
+
+    </div>
+
+
+    <article class="post">
+
+      <div class="post-number">
+        002
+      </div>
+
+      <div>
+
+        <h3>
+          The "Hey Stranger" Text Needs to Stop
+        </h3>
+
+        <p>
+          A formal investigation into why men disappear
+          for six weeks and then reappear like nothing happened.
+        </p>
+
+        <div class="date">
+          August 2026
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <article class="post">
+
+      <div class="post-number">
+        003
+      </div>
+
+      <div>
+
+        <h3>
+          Things I Will Never Do Again
+        </h3>
+
+        <p>
+          A list that will inevitably be contradicted
+          within the next three months.
+        </p>
+
+        <div class="date">
+          August 2026
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <article class="post">
+
+      <div class="post-number">
+        004
+      </div>
+
+      <div>
+
+        <h3>
+          Things I Will Absolutely Do Again
+        </h3>
+
+        <p>
+          Because personal growth is important,
+          but so is having fun.
+        </p>
+
+        <div class="date">
+          August 2026
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <article class="post">
+
+      <div class="post-number">
+        005
+      </div>
+
+      <div>
+
+        <h3>
+          The Three-Date Rule Is Dead
+        </h3>
+
+        <p>
+          In which we examine outdated dating rules
+          and decide which ones deserve to be ignored.
+        </p>
+
+        <div class="date">
+          Coming soon
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <footer>
+
+    <h2>
+      Just Between Us.
+    </h2>
+
+    <p>
+      New York · Dating · Life · Other Developments
+    </p>
+
+  </footer>
+
+</body>
+</html>
