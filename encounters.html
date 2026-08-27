@@ -167,7 +167,7 @@
       padding-bottom: 5px;
     }
 
-    /* ENCOUNTER */
+    /* ENCOUNTERS */
 
     .encounters {
       max-width: 1100px;
@@ -239,13 +239,18 @@
 
     .read {
       display: inline-block;
-      margin-top: 5px;
+      margin-top: 18px;
       font-size: 8px;
       letter-spacing: 2px;
       text-transform: uppercase;
       border-bottom: 1px solid var(--wine);
       padding-bottom: 5px;
       color: var(--wine);
+      transition: opacity .2s ease;
+    }
+
+    .read:hover {
+      opacity: .6;
     }
 
     /* FEATURED ENCOUNTER */
@@ -369,37 +374,39 @@
     </div>
   </header>
 
- <nav>
 
-  <a href="index.html">
-    Home
-  </a>
+  <nav>
 
-  <a href="encounters.html">
-    The Encounters
-  </a>
+    <a href="index.html">
+      Home
+    </a>
 
-  <a href="after-hours.html">
-    After Hours
-  </a>
+    <a href="encounters.html">
+      The Encounters
+    </a>
 
-  <a href="debrief.html">
-    The Debrief
-  </a>
+    <a href="after-hours.html">
+      After Hours
+    </a>
 
-  <a href="new-york.html">
-    New York
-  </a>
+    <a href="debrief.html">
+      The Debrief
+    </a>
 
-  <a href="receipts.html">
-    The Receipts
-  </a>
+    <a href="new-york.html">
+      New York
+    </a>
 
-  <a href="archive.html">
-    The Archive
-  </a>
+    <a href="receipts.html">
+      The Receipts
+    </a>
 
-</nav>
+    <a href="archive.html">
+      The Archive
+    </a>
+
+  </nav>
+
 
   <section class="page-intro">
 
@@ -418,6 +425,7 @@
 
   </section>
 
+
   <div class="filters">
     <span>All Encounters</span>
     <span>Recent</span>
@@ -425,9 +433,11 @@
     <span>Questionable</span>
   </div>
 
+
   <main class="encounters">
 
-    <!-- FEATURED -->
+
+    <!-- FEATURED ENCOUNTER -->
 
     <article class="featured-encounter">
 
@@ -438,40 +448,42 @@
         </div>
 
         <h2>
-          The Finance Bro Incident
+          The British Agent
         </h2>
 
         <p class="encounter-description">
-          It started innocently enough. Which, in hindsight,
-          should have been our first warning.
+          A Tinder match with a British accent, a mysterious
+          government job, questionable intentions and an
+          unfortunate ability to send voice memos.
         </p>
 
-        <a href="#" class="read">
+        <a href="encounters/british-agent.html" class="read">
           Read the full report →
         </a>
 
       </div>
 
+
       <div class="encounter-meta">
 
         <div class="meta-row">
           <div class="meta-label">Location</div>
-          <div class="meta-value">West Village</div>
+          <div class="meta-value">New York</div>
         </div>
 
         <div class="meta-row">
           <div class="meta-label">Initial Impression</div>
-          <div class="meta-value">Promising</div>
+          <div class="meta-value">ACCENT. BRITISH.</div>
         </div>
 
         <div class="meta-row">
           <div class="meta-label">Verdict</div>
-          <div class="meta-value">7.2 / 10</div>
+          <div class="meta-value">9 / 10</div>
         </div>
 
         <div class="meta-row">
-          <div class="meta-label">Would I See Him Again?</div>
-          <div class="meta-value">Unfortunately, yes.</div>
+          <div class="meta-label">Status</div>
+          <div class="meta-value">To be continued.</div>
         </div>
 
       </div>
@@ -479,7 +491,7 @@
     </article>
 
 
-    <!-- ENCOUNTER 002 -->
+    <!-- PLACEHOLDER FOR FUTURE ENCOUNTERS -->
 
     <article class="encounter">
 
@@ -490,168 +502,40 @@
       <div>
 
         <div class="encounter-category">
-          The Encounters
+          Coming Soon
         </div>
 
         <h2>
-          The Hinge Situation
+          The Next One
         </h2>
 
         <p class="encounter-description">
-          Four days of texting, one suspiciously elaborate
-          dinner reservation, and a man who may have
-          oversold himself just slightly.
+          The city is full of possibilities.
+          Unfortunately, most of them are men.
         </p>
-
-        <a href="#" class="read">
-          Read the full report →
-        </a>
 
       </div>
 
       <div class="encounter-meta">
 
         <div class="meta-row">
-          <div class="meta-label">Location</div>
-          <div class="meta-value">SoHo</div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">Initial Impression</div>
-          <div class="meta-value">Intriguing</div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">Verdict</div>
-          <div class="meta-value">6.5 / 10</div>
-        </div>
-
-        <div class="meta-row">
           <div class="meta-label">Status</div>
-          <div class="meta-value">Under review.</div>
+          <div class="meta-value">Pending.</div>
         </div>
 
       </div>
 
     </article>
 
-
-    <!-- ENCOUNTER 003 -->
-
-    <article class="encounter">
-
-      <div class="encounter-number">
-        003
-      </div>
-
-      <div>
-
-        <div class="encounter-category">
-          The Encounters
-        </div>
-
-        <h2>
-          The One Who Came Back
-        </h2>
-
-        <p class="encounter-description">
-          He disappeared. He returned. Naturally, the story
-          required a sequel.
-        </p>
-
-        <a href="#" class="read">
-          Read the full report →
-        </a>
-
-      </div>
-
-      <div class="encounter-meta">
-
-        <div class="meta-row">
-          <div class="meta-label">Location</div>
-          <div class="meta-value">Downtown</div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">Initial Impression</div>
-          <div class="meta-value">Dangerous</div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">Verdict</div>
-          <div class="meta-value">8 / 10</div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">Status</div>
-          <div class="meta-value">Classified.</div>
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- ENCOUNTER 004 -->
-
-    <article class="encounter">
-
-      <div class="encounter-number">
-        004
-      </div>
-
-      <div>
-
-        <div class="encounter-category">
-          The Encounters
-        </div>
-
-        <h2>
-          A Very Long First Date
-        </h2>
-
-        <p class="encounter-description">
-          What was supposed to be one drink became dinner,
-          another bar, and a decision we will not be discussing.
-        </p>
-
-        <a href="#" class="read">
-          Read the full report →
-        </a>
-
-      </div>
-
-      <div class="encounter-meta">
-
-        <div class="meta-row">
-          <div class="meta-label">Location</div>
-          <div class="meta-value">Lower East Side</div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">Initial Impression</div>
-          <div class="meta-value">Interesting</div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">Verdict</div>
-          <div class="meta-value">9 / 10</div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">Status</div>
-          <div class="meta-value">Don't ask.</div>
-        </div>
-
-      </div>
-
-    </article>
 
   </main>
 
+
   <footer>
 
-    <h2>Just Between Us.</h2>
+    <h2>
+      Just Between Us.
+    </h2>
 
     <p>
       New York · Dating · Life · Other Developments
