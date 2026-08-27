@@ -7,7 +7,7 @@
   <title>The Archive · Just Between Us</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap");
 
     :root {
       --cream: #f6f0e7;
@@ -28,7 +28,7 @@
     body {
       background: var(--cream);
       color: var(--brown);
-      font-family: 'DM Sans', sans-serif;
+      font-family: "DM Sans", sans-serif;
       font-weight: 300;
     }
 
@@ -63,7 +63,7 @@
     }
 
     .logo {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       font-size: clamp(52px, 9vw, 100px);
       font-weight: 500;
       letter-spacing: -3px;
@@ -72,7 +72,7 @@
     }
 
     .tagline {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       font-size: 18px;
       font-style: italic;
       margin-top: 22px;
@@ -93,10 +93,27 @@
       font-size: 9px;
       letter-spacing: 2px;
       text-transform: uppercase;
+      position: relative;
+      transition: color .2s ease;
     }
 
     nav a:hover {
       color: var(--wine);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -6px;
+      left: 0;
+      background: var(--wine);
+      transition: width .2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* INTRO */
@@ -117,7 +134,7 @@
     }
 
     .intro h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       color: var(--wine);
       font-size: clamp(58px, 9vw, 100px);
       font-weight: 500;
@@ -128,9 +145,43 @@
     .intro p {
       max-width: 620px;
       margin: 28px auto 0;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       font-size: 21px;
       line-height: 1.4;
+      color: var(--brown-light);
+    }
+
+    /* STATS */
+
+    .stats {
+      max-width: 1000px;
+      margin: 0 auto 75px;
+      padding: 0 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .stat {
+      background: var(--ivory);
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      color: var(--wine);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: var(--brown-light);
     }
 
@@ -152,7 +203,7 @@
     }
 
     .archive-header h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       font-size: 44px;
       font-weight: 500;
       color: var(--wine);
@@ -179,7 +230,7 @@
     }
 
     .year-title h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       color: var(--wine);
       font-size: 48px;
       font-weight: 500;
@@ -211,7 +262,7 @@
     .entries {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 30px;
     }
 
     .entry {
@@ -222,13 +273,13 @@
     }
 
     .entry-date {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       font-size: 16px;
       color: var(--brown-light);
     }
 
     .entry h4 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       color: var(--wine);
       font-size: 29px;
       font-weight: 500;
@@ -236,8 +287,12 @@
       margin-bottom: 7px;
     }
 
+    .entry h4 a:hover {
+      color: var(--gold);
+    }
+
     .entry p {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       color: var(--brown-light);
       font-size: 16px;
       line-height: 1.35;
@@ -249,6 +304,32 @@
       text-transform: uppercase;
       color: var(--gold);
       margin-top: 9px;
+    }
+
+    .entry-read {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--wine);
+      border-bottom: 1px solid var(--wine);
+      padding-bottom: 4px;
+    }
+
+    .entry-read:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* COMING SOON */
+
+    .coming-soon {
+      opacity: .75;
+    }
+
+    .coming-soon h4 {
+      color: var(--brown-light);
     }
 
     /* QUOTE */
@@ -264,7 +345,7 @@
     .quote p {
       max-width: 700px;
       margin: 0 auto;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       font-size: 31px;
       line-height: 1.15;
       font-style: italic;
@@ -289,7 +370,7 @@
     }
 
     footer h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "Cormorant Garamond", serif;
       font-size: 48px;
       font-weight: 500;
       color: #eadbc8;
@@ -307,6 +388,10 @@
 
       nav {
         gap: 17px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .month {
@@ -335,7 +420,6 @@
     Private Record · New York · Est. 2026
   </div>
 
-
   <header>
 
     <div class="location">
@@ -347,44 +431,42 @@
     </div>
 
     <div class="tagline">
-      You didn't hear it from me.
+      You did not hear it from me.
     </div>
 
   </header>
 
-
   <nav>
 
-  <a href="index.html">
-    Home
-  </a>
+    <a href="index.html">
+      Home
+    </a>
 
-  <a href="encounters.html">
-    The Encounters
-  </a>
+    <a href="encounters.html">
+      The Encounters
+    </a>
 
-  <a href="after-hours.html">
-    After Hours
-  </a>
+    <a href="after-hours.html">
+      After Hours
+    </a>
 
-  <a href="debrief.html">
-    The Debrief
-  </a>
+    <a href="debrief.html">
+      The Debrief
+    </a>
 
-  <a href="new-york.html">
-    New York
-  </a>
+    <a href="new-york.html">
+      New York
+    </a>
 
-  <a href="receipts.html">
-    The Receipts
-  </a>
+    <a href="receipts.html">
+      The Receipts
+    </a>
 
-  <a href="archive.html">
-    The Archive
-  </a>
+    <a href="archive.html">
+      The Archive
+    </a>
 
-</nav>
-
+  </nav>
 
   <section class="intro">
 
@@ -403,6 +485,31 @@
 
   </section>
 
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="stat">
+      <div class="stat-number">1</div>
+      <div class="stat-label">Encounter</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-number">1</div>
+      <div class="stat-label">Debrief</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-number">0</div>
+      <div class="stat-label">After Hours</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Receipts</div>
+    </div>
+
+  </section>
 
   <section class="archive">
 
@@ -413,11 +520,10 @@
       </h2>
 
       <span>
-        Nothing important was forgotten
+        Peer reviewed by the group chat
       </span>
 
     </div>
-
 
     <!-- 2026 -->
 
@@ -433,7 +539,6 @@
 
       </div>
 
-
       <!-- AUGUST -->
 
       <div class="month">
@@ -444,47 +549,90 @@
 
         <div class="entries">
 
+          <!-- BRITISH AGENT -->
 
           <article class="entry">
 
             <div class="entry-date">
-              27
+              —
             </div>
 
             <div>
 
               <h4>
-                The Beginning
+                <a href="encounters/british-agent.html">
+                  The British Agent
+                </a>
               </h4>
 
               <p>
-                Just Between Us officially begins.
+                A Tinder encounter involving a British accent,
+                a mysterious government job, aggressive making out,
+                and a man who definitely wanted a hotel room.
               </p>
 
               <div class="entry-type">
-                Site · Beginning
+                The Encounters · 9 / 10
               </div>
+
+              <a href="encounters/british-agent.html" class="entry-read">
+                Read the report →
+              </a>
 
             </div>
 
           </article>
 
+          <!-- SHORT GUY -->
 
           <article class="entry">
 
             <div class="entry-date">
-              26
+              —
             </div>
 
             <div>
 
               <h4>
-                A Night Worth Remembering
+                <a href="debrief/short-guy.html">
+                  Is It Shallow to Cancel a Date Because He Is Short?
+                </a>
               </h4>
 
               <p>
-                One of those nights that deserves its
-                own entry.
+                A discussion about height, dating apps,
+                attraction, standards, and whether canceling
+                four hours before a date makes you a bad person.
+              </p>
+
+              <div class="entry-type">
+                The Debrief
+              </div>
+
+              <a href="debrief/short-guy.html" class="entry-read">
+                Read the debrief →
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- AFTER HOURS -->
+
+          <article class="entry coming-soon">
+
+            <div class="entry-date">
+              —
+            </div>
+
+            <div>
+
+              <h4>
+                Coming Soon
+              </h4>
+
+              <p>
+                The nightlife files are still being assembled.
               </p>
 
               <div class="entry-type">
@@ -495,97 +643,58 @@
 
           </article>
 
+          <!-- RECEIPTS -->
 
-          <article class="entry">
+          <article class="entry coming-soon">
 
             <div class="entry-date">
-              24
+              —
             </div>
 
             <div>
 
               <h4>
-                The One We Discussed for Three Hours
+                Coming Soon
               </h4>
 
               <p>
-                Naturally, the group chat had thoughts.
+                Evidence is currently being collected.
               </p>
 
               <div class="entry-type">
-                Debrief · Classified
+                The Receipts
               </div>
 
             </div>
 
           </article>
 
+          <!-- NEW YORK -->
 
-        </div>
-
-      </div>
-
-
-      <!-- JULY -->
-
-      <div class="month">
-
-        <div class="month-name">
-          July
-        </div>
-
-        <div class="entries">
-
-
-          <article class="entry">
+          <article class="entry coming-soon">
 
             <div class="entry-date">
-              18
+              —
             </div>
 
             <div>
 
               <h4>
-                The Plot Thickens
+                Coming Soon
               </h4>
 
               <p>
-                Details intentionally withheld.
+                New York recommendations and questionable
+                local intelligence are forthcoming.
               </p>
 
               <div class="entry-type">
-                Encounters
+                New York
               </div>
 
             </div>
 
           </article>
-
-
-          <article class="entry">
-
-            <div class="entry-date">
-              11
-            </div>
-
-            <div>
-
-              <h4>
-                We Should Probably Talk About This
-              </h4>
-
-              <p>
-                We did. Extensively.
-              </p>
-
-              <div class="entry-type">
-                Debrief
-              </div>
-
-            </div>
-
-          </article>
-
 
         </div>
 
@@ -593,8 +702,7 @@
 
     </div>
 
-
-    <!-- FUTURE YEARS -->
+    <!-- FUTURE -->
 
     <div class="year">
 
@@ -616,7 +724,7 @@
 
         <div class="entries">
 
-          <article class="entry">
+          <article class="entry coming-soon">
 
             <div class="entry-date">
               —
@@ -625,11 +733,11 @@
             <div>
 
               <h4>
-                More to Come
+                Coming Soon
               </h4>
 
               <p>
-                The archive is open.
+                The archive remains open.
               </p>
 
               <div class="entry-type">
@@ -646,11 +754,10 @@
 
     </div>
 
-
     <div class="quote">
 
       <p>
-        "I can't believe we used to think this
+        "I cannot believe we used to think this
         was a good idea."
       </p>
 
@@ -660,9 +767,7 @@
 
     </div>
 
-
   </section>
-
 
   <footer>
 
