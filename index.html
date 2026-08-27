@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -223,6 +224,11 @@
       border-bottom: 1px solid #d9bda0;
       width: fit-content;
       padding-bottom: 7px;
+      transition: opacity .2s ease;
+    }
+
+    .read-story:hover {
+      opacity: .65;
     }
 
     /* ---------- SECTION ---------- */
@@ -267,6 +273,11 @@
     .story-card {
       border-top: 1px solid var(--line);
       padding-top: 18px;
+      transition: transform .2s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-3px);
     }
 
     .story-number {
@@ -430,6 +441,7 @@
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -441,186 +453,230 @@
   <header>
     <div class="location">Manhattan · After Dark</div>
 
-    <div class="logo">
-      Just Between Us
-    </div>
+```
+<div class="logo">
+  Just Between Us
+</div>
 
-    <div class="tagline">
-      You didn't hear it from me.
-    </div>
+<div class="tagline">
+  You didn't hear it from me.
+</div>
+```
+
   </header>
 
   <nav>
 
-  <a href="index.html">
-    Home
-  </a>
+```
+<a href="index.html">Home</a>
 
-  <a href="encounters.html">
-    The Encounters
-  </a>
+<a href="encounters.html">The Encounters</a>
 
-  <a href="after-hours.html">
-    After Hours
-  </a>
+<a href="after-hours.html">After Hours</a>
 
-  <a href="debrief.html">
-    The Debrief
-  </a>
+<a href="debrief.html">The Debrief</a>
 
-  <a href="new-york.html">
-    New York
-  </a>
+<a href="new-york.html">New York</a>
 
-  <a href="receipts.html">
-    The Receipts
-  </a>
+<a href="receipts.html">The Receipts</a>
 
-  <a href="archive.html">
-    The Archive
-  </a>
+<a href="archive.html">The Archive</a>
+```
 
-</nav>
+  </nav>
 
   <section class="intro">
-    <div class="intro-label">The latest</div>
-    <h2>Stories from the city, after dark.</h2>
+
+```
+<div class="intro-label">
+  The latest
+</div>
+
+<h2>
+  Stories from the city, after dark.
+</h2>
+```
+
   </section>
+
+  <!-- FEATURED ENCOUNTER -->
 
   <section class="featured">
 
-    <div class="featured-photo">
-      Featured photograph
-    </div>
+```
+<div class="featured-photo">
+  Featured photograph
+</div>
 
-    <div class="featured-content">
+<div class="featured-content">
 
-      <div class="featured-category">
-        The Encounters · 001
-      </div>
+  <div class="featured-category">
+    The Encounters · 001
+  </div>
 
-      <h1>
-        The One We Probably Shouldn't Talk About
-      </h1>
+  <h1>
+    The British Agent
+  </h1>
 
-      <div class="featured-meta">
-        Manhattan · August 2026
-      </div>
+  <div class="featured-meta">
+    New York · August 2026
+  </div>
 
-      <p>
-        Some nights begin with one drink, one questionable
-        decision, and absolutely no idea how the evening
-        is going to end.
-      </p>
+  <p>
+    A Tinder match with a British accent, a mysterious
+    government job, questionable intentions and an
+    unfortunate ability to send voice memos.
+  </p>
 
-      <a href="#" class="read-story">
-        Read the story →
-      </a>
+  <a href="encounters/british-agent.html" class="read-story">
+    Read the story →
+  </a>
 
-    </div>
+</div>
+```
 
   </section>
+
+  <!-- RECENT DEVELOPMENTS -->
 
   <section class="section">
 
-    <div class="section-header">
-      <h2>Recent Developments</h2>
-      <span>From the archive</span>
+```
+<div class="section-header">
+
+  <h2>
+    Recent Developments
+  </h2>
+
+  <span>
+    From the archive
+  </span>
+
+</div>
+
+
+<div class="story-grid">
+
+
+  <a href="encounters/british-agent.html" class="story-card">
+
+    <div class="story-number">
+      01 · THE ENCOUNTERS
     </div>
 
-    <div class="story-grid">
+    <h3>
+      The British Agent
+    </h3>
 
-      <article class="story-card">
-        <div class="story-number">01 · THE ENCOUNTERS</div>
+    <p>
+      A Tinder match, a British accent, a mysterious
+      government job and a first date that involved
+      considerably more making out than anticipated.
+    </p>
 
-        <h3>
-          The Finance Bro Incident
-        </h3>
-
-        <p>
-          It started innocently enough. Which, in hindsight,
-          should have been our first warning.
-        </p>
-
-        <div class="story-date">
-          August 2026
-        </div>
-      </article>
-
-      <article class="story-card">
-        <div class="story-number">02 · AFTER HOURS</div>
-
-        <h3>
-          Thursday Night, Somehow
-        </h3>
-
-        <p>
-          There are certain nights in New York that are
-          better left undocumented.
-        </p>
-
-        <div class="story-date">
-          August 2026
-        </div>
-      </article>
-
-      <article class="story-card">
-        <div class="story-number">03 · THE RECEIPTS</div>
-
-        <h3>
-          Things We Don't Discuss in Daylight
-        </h3>
-
-        <p>
-          A completely unbiased account of events.
-          Allegedly.
-        </p>
-
-        <div class="story-date">
-          August 2026
-        </div>
-      </article>
-
+    <div class="story-date">
+      August 2026
     </div>
+
+  </a>
+
+
+  <article class="story-card">
+
+    <div class="story-number">
+      02 · AFTER HOURS
+    </div>
+
+    <h3>
+      Thursday Night, Somehow
+    </h3>
+
+    <p>
+      There are certain nights in New York that are
+      better left undocumented.
+    </p>
+
+    <div class="story-date">
+      Coming Soon
+    </div>
+
+  </article>
+
+
+  <article class="story-card">
+
+    <div class="story-number">
+      03 · THE RECEIPTS
+    </div>
+
+    <h3>
+      Things We Don't Discuss in Daylight
+    </h3>
+
+    <p>
+      A completely unbiased account of events.
+      Allegedly.
+    </p>
+
+    <div class="story-date">
+      Coming Soon
+    </div>
+
+  </article>
+
+
+</div>
+```
 
   </section>
 
+  <!-- THE DEBRIEF -->
+
   <section class="debrief">
 
-    <div class="debrief-inner">
+```
+<div class="debrief-inner">
 
-      <div class="debrief-label">
-        From the editor
-      </div>
+  <div class="debrief-label">
+    From the editor
+  </div>
 
-      <h2>The Debrief</h2>
+  <h2>
+    The Debrief
+  </h2>
 
-      <p>
-        The unsolicited thoughts, observations and conclusions
-        that absolutely nobody asked for.
-      </p>
+  <p>
+    The unsolicited thoughts, observations and conclusions
+    that absolutely nobody asked for.
+  </p>
 
-      <a href="#" class="debrief-link">
-        Enter the debrief →
-      </a>
+  <a href="debrief.html" class="debrief-link">
+    Enter the debrief →
+  </a>
 
-    </div>
+</div>
+```
 
   </section>
 
   <footer>
 
-    <h2>Just Between Us.</h2>
+```
+<h2>
+  Just Between Us.
+</h2>
 
-    <p>
-      New York · Dating · Life · Other Developments
-    </p>
+<p>
+  New York · Dating · Life · Other Developments
+</p>
 
-    <div class="footer-note">
-      What happens in New York stays between us.
-    </div>
+<div class="footer-note">
+  What happens in New York stays between us.
+</div>
+```
 
   </footer>
 
 </body>
 </html>
+```
