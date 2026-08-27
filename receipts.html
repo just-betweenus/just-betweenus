@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Receipts · Just Between Us</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+    :root {
+      --cream: #f6f0e7;
+      --ivory: #fbf8f3;
+      --wine: #591c2a;
+      --brown: #332822;
+      --brown-light: #75665d;
+      --gold: #b4965a;
+      --line: #d9cec0;
+      --screen: #e9e3db;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 9px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    header {
+      text-align: center;
+      padding: 48px 30px 35px;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--brown-light);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 500;
+      letter-spacing: -3px;
+      line-height: .85;
+      color: var(--wine);
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 22px;
+      color: var(--brown-light);
+    }
+
+    nav {
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 34px;
+      padding: 17px 20px;
+    }
+
+    nav a {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--wine);
+    }
+
+    /* INTRO */
+
+    .intro {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 80px 30px 55px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: clamp(58px, 9vw, 100px);
+      font-weight: 500;
+      line-height: .8;
+      letter-spacing: -3px;
+    }
+
+    .intro p {
+      max-width: 620px;
+      margin: 28px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.4;
+      color: var(--brown-light);
+    }
+
+    /* RECEIPTS */
+
+    .receipts {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 30px 100px;
+    }
+
+    .section-header {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 500;
+      color: var(--wine);
+    }
+
+    .section-header span {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .receipt {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      padding: 35px;
+      margin-bottom: 45px;
+    }
+
+    .receipt-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .receipt-number {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--gold);
+      font-size: 24px;
+    }
+
+    .receipt-type {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    /* PHONE */
+
+    .phone {
+      max-width: 420px;
+      margin: 0 auto;
+      background: var(--screen);
+      border: 8px solid #292522;
+      border-radius: 32px;
+      padding: 22px 17px 28px;
+      box-shadow: 0 12px 35px rgba(51, 40, 34, .12);
+    }
+
+    .phone-header {
+      text-align: center;
+      font-size: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+      padding-bottom: 20px;
+    }
+
+    .message {
+      max-width: 78%;
+      padding: 11px 14px;
+      margin: 10px 0;
+      border-radius: 17px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .them {
+      background: #fff;
+      margin-right: auto;
+      border-bottom-left-radius: 5px;
+    }
+
+    .me {
+      background: var(--wine);
+      color: var(--cream);
+      margin-left: auto;
+      border-bottom-right-radius: 5px;
+    }
+
+    .timestamp {
+      font-size: 7px;
+      color: #8b8179;
+      text-align: center;
+      margin: 12px 0;
+    }
+
+    /* COMMENTARY */
+
+    .commentary {
+      max-width: 700px;
+      margin: 32px auto 0;
+      text-align: center;
+    }
+
+    .commentary-label {
+      color: var(--gold);
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .commentary h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .commentary p {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--brown-light);
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #eadbc8;
+    }
+
+    footer p {
+      margin-top: 14px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bdaea1;
+    }
+
+    @media (max-width: 750px) {
+
+      nav {
+        gap: 17px;
+      }
+
+      .receipt {
+        padding: 25px 18px;
+      }
+
+      .commentary h3 {
+        font-size: 32px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Evidence · Filed Under: You Can't Make This Up
+  </div>
+
+
+  <header>
+
+    <div class="location">
+      Manhattan · Evidence Locker
+    </div>
+
+    <div class="logo">
+      Just Between Us
+    </div>
+
+    <div class="tagline">
+      You didn't hear it from me.
+    </div>
+
+  </header>
+
+
+  <nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="encounters.html">
+      The Encounters
+    </a>
+
+    <a href="after-hours.html">
+      After Hours
+    </a>
+
+    <a href="debrief.html">
+      The Debrief
+    </a>
+
+    <a href="new-york.html">
+      New York
+    </a>
+
+    <a href="receipts.html">
+      The Receipts
+    </a>
+
+    <a href="#">
+      The Archive
+    </a>
+
+  </nav>
+
+
+  <section class="intro">
+
+    <div class="eyebrow">
+      Exhibit A
+    </div>
+
+    <h1>
+      The Receipts
+    </h1>
+
+    <p>
+      Because sometimes the story sounds unbelievable
+      until you have the screenshots.
+    </p>
+
+  </section>
+
+
+  <section class="receipts">
+
+    <div class="section-header">
+
+      <h2>
+        Evidence
+      </h2>
+
+      <span>
+        Names redacted. Mostly.
+      </span>
+
+    </div>
+
+
+    <!-- RECEIPT 001 -->
+
+    <article class="receipt">
+
+      <div class="receipt-top">
+
+        <div class="receipt-number">
+          Exhibit 001
+        </div>
+
+        <div class="receipt-type">
+          Dating · Text Message
+        </div>
+
+      </div>
+
+
+      <div class="phone">
+
+        <div class="phone-header">
+          Thursday · 10:48 PM
+        </div>
+
+        <div class="message them">
+          what are you doing tonight
+        </div>
+
+        <div class="message me">
+          I'm out with my friends
+        </div>
+
+        <div class="message them">
+          come meet me
+        </div>
+
+        <div class="timestamp">
+          11:03 PM
+        </div>
+
+        <div class="message me">
+          where
+        </div>
+
+        <div class="message them">
+          you'll see
+        </div>
+
+      </div>
+
+
+      <div class="commentary">
+
+        <div class="commentary-label">
+          The Official Finding
+        </div>
+
+        <h3>
+          "You'll see" is never a good sign.
+        </h3>
+
+        <p>
+          It was, in fact, not a good sign.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- RECEIPT 002 -->
+
+    <article class="receipt">
+
+      <div class="receipt-top">
+
+        <div class="receipt-number">
+          Exhibit 002
+        </div>
+
+        <div class="receipt-type">
+          Dating · The Comeback
+        </div>
+
+      </div>
+
+
+      <div class="phone">
+
+        <div class="phone-header">
+          Six Weeks Later
+        </div>
+
+        <div class="message them">
+          hey stranger
+        </div>
+
+        <div class="message them">
+          how have you been?
+        </div>
+
+        <div class="message me">
+          ...
+        </div>
+
+      </div>
+
+
+      <div class="commentary">
+
+        <div class="commentary-label">
+          The Official Finding
+        </div>
+
+        <h3>
+          He remembered I existed.
+        </h3>
+
+        <p>
+          Unfortunately for him, I also remembered
+          how long he took to text back.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- RECEIPT 003 -->
+
+    <article class="receipt">
+
+      <div class="receipt-top">
+
+        <div class="receipt-number">
+          Exhibit 003
+        </div>
+
+        <div class="receipt-type">
+          Group Chat · Classified
+        </div>
+
+      </div>
+
+
+      <div class="phone">
+
+        <div class="phone-header">
+          The Girls · 1:14 AM
+        </div>
+
+        <div class="message me">
+          girls
+        </div>
+
+        <div class="message me">
+          emergency
+        </div>
+
+        <div class="message them">
+          what happened
+        </div>
+
+        <div class="message me">
+          I need everyone to remain calm
+        </div>
+
+        <div class="message them">
+          K what did he do
+        </div>
+
+        <div class="message me">
+          I'm going back
+        </div>
+
+        <div class="message them">
+          NO
+        </div>
+
+      </div>
+
+
+      <div class="commentary">
+
+        <div class="commentary-label">
+          The Official Finding
+        </div>
+
+        <h3>
+          They tried to stop me.
+        </h3>
+
+        <p>
+          They had excellent reasons. I ignored all of them.
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </section>
+
+
+  <footer>
+
+    <h2>
+      Just Between Us.
+    </h2>
+
+    <p>
+      New York · Dating · Life · Other Developments
+    </p>
+
+  </footer>
+
+</body>
+</html>
