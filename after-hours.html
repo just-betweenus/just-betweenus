@@ -13,7 +13,6 @@
       --cream: #f6f0e7;
       --ivory: #fbf8f3;
       --wine: #591c2a;
-      --wine-light: #7a3545;
       --brown: #332822;
       --brown-light: #75665d;
       --gold: #b4965a;
@@ -38,8 +37,6 @@
       text-decoration: none;
     }
 
-    /* TOP BAR */
-
     .top-bar {
       background: var(--wine);
       color: var(--cream);
@@ -49,8 +46,6 @@
       letter-spacing: 3px;
       text-transform: uppercase;
     }
-
-    /* HEADER */
 
     header {
       text-align: center;
@@ -84,8 +79,6 @@
       color: var(--brown-light);
     }
 
-    /* NAV */
-
     nav {
       background: var(--ivory);
       border-bottom: 1px solid var(--line);
@@ -106,12 +99,10 @@
       color: var(--wine);
     }
 
-    /* INTRO */
-
     .intro {
-      max-width: 900px;
+      max-width: 850px;
       margin: 0 auto;
-      padding: 75px 30px 55px;
+      padding: 80px 30px 55px;
       text-align: center;
     }
 
@@ -133,7 +124,7 @@
     }
 
     .intro p {
-      max-width: 600px;
+      max-width: 620px;
       margin: 28px auto 0;
       font-family: 'Cormorant Garamond', serif;
       font-size: 21px;
@@ -141,65 +132,53 @@
       color: var(--brown-light);
     }
 
-    /* FEATURED */
-
-    .featured {
-      max-width: 1100px;
-      margin: 0 auto 85px;
+    .feature {
+      max-width: 1000px;
+      margin: 0 auto 80px;
       padding: 0 30px;
     }
 
-    .featured-card {
-      background: var(--wine);
-      color: var(--cream);
+    .feature-card {
+      background: var(--ivory);
+      border: 1px solid var(--line);
       padding: 65px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+      position: relative;
     }
 
-    .photo-placeholder {
-      min-height: 390px;
-      background: #76545a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #eadfd4;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-style: italic;
+    .feature-card::before {
+      content: "COMING SOON";
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--gold);
     }
 
     .category {
       font-size: 9px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #d9bda0;
-      margin-bottom: 20px;
+      color: var(--gold);
+      margin-bottom: 18px;
     }
 
-    .featured-card h2 {
+    .feature-card h2 {
       font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
       font-size: 58px;
-      font-weight: 500;
       line-height: .9;
-      margin-bottom: 22px;
-    }
-
-    .featured-card p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      line-height: 1.4;
-      color: #eadfd4;
+      font-weight: 500;
+      max-width: 750px;
       margin-bottom: 25px;
     }
 
-    .meta {
-      font-size: 8px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #cdb9aa;
+    .feature-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      line-height: 1.45;
+      color: var(--brown-light);
+      max-width: 700px;
       margin-bottom: 28px;
     }
 
@@ -207,97 +186,78 @@
       font-size: 9px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      border-bottom: 1px solid #d9bda0;
+      color: var(--wine);
+      border-bottom: 1px solid var(--wine);
       padding-bottom: 6px;
     }
 
-    /* STORIES */
-
-    .stories {
-      max-width: 1100px;
+    .posts {
+      max-width: 1000px;
       margin: 0 auto;
       padding: 0 30px 100px;
     }
 
-    .section-header {
+    .section-title {
       border-top: 1px solid var(--line);
-      padding-top: 22px;
-      margin-bottom: 40px;
+      padding-top: 20px;
+      margin-bottom: 20px;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
     }
 
-    .section-header h2 {
+    .section-title h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 43px;
-      font-weight: 500;
       color: var(--wine);
+      font-size: 42px;
+      font-weight: 500;
     }
 
-    .section-header span {
-      font-size: 9px;
+    .section-title span {
+      font-size: 8px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--brown-light);
     }
 
-    .story {
+    .post {
       border-top: 1px solid var(--line);
-      padding: 35px 0;
+      padding: 38px 0;
       display: grid;
-      grid-template-columns: 100px 1fr 200px;
+      grid-template-columns: 90px 1fr;
       gap: 30px;
-      align-items: start;
     }
 
-    .story-number {
+    .post-number {
       font-family: 'Cormorant Garamond', serif;
       font-size: 25px;
       color: var(--gold);
     }
 
-    .story h3 {
+    .post h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 39px;
-      font-weight: 500;
-      line-height: .95;
       color: var(--wine);
-      margin-bottom: 12px;
+      font-size: 38px;
+      line-height: .95;
+      font-weight: 500;
+      margin-bottom: 13px;
     }
 
-    .story p {
+    .post p {
       font-family: 'Cormorant Garamond', serif;
       font-size: 18px;
       line-height: 1.4;
       color: var(--brown-light);
-      max-width: 600px;
+      max-width: 680px;
+      margin-bottom: 20px;
     }
 
-    .story-meta {
-      border-left: 1px solid var(--line);
-      padding-left: 20px;
-    }
-
-    .story-meta div {
-      margin-bottom: 15px;
-    }
-
-    .label {
-      display: block;
+    .date {
       font-size: 8px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 4px;
+      color: var(--brown-light);
     }
-
-    .value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-    }
-
-    /* FOOTER */
 
     footer {
       background: var(--brown);
@@ -321,42 +281,27 @@
       color: #bdaea1;
     }
 
-    /* MOBILE */
-
     @media (max-width: 750px) {
 
       nav {
         gap: 17px;
       }
 
-      .featured-card {
+      .feature-card {
+        padding: 45px 30px;
+      }
+
+      .feature-card h2 {
+        font-size: 45px;
+      }
+
+      .post {
         grid-template-columns: 1fr;
-        padding: 35px;
-        gap: 35px;
+        gap: 12px;
       }
 
-      .photo-placeholder {
-        min-height: 300px;
-      }
-
-      .featured-card h2 {
-        font-size: 46px;
-      }
-
-      .story {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .story-meta {
-        border-left: none;
-        border-top: 1px solid var(--line);
-        padding-left: 0;
-        padding-top: 20px;
-      }
-
-      .story h3 {
-        font-size: 35px;
+      .post h3 {
+        font-size: 34px;
       }
     }
   </style>
@@ -369,18 +314,22 @@
   </div>
 
   <header>
-    <div class="location">Manhattan · After Dark</div>
+
+    <div class="location">
+      Manhattan · After Dark
+    </div>
 
     <div class="logo">
       Just Between Us
     </div>
 
     <div class="tagline">
-      You didn't hear it from me.
+      You didnt hear it from me.
     </div>
+
   </header>
 
- <nav>
+  <nav>
 
   <a href="index.html">
     Home
@@ -412,11 +361,10 @@
 
 </nav>
 
-
   <section class="intro">
 
     <div class="eyebrow">
-      After dark
+      Coming Soon
     </div>
 
     <h1>
@@ -424,196 +372,141 @@
     </h1>
 
     <p>
-      The nights that started with "just one drink"
-      and somehow became stories worth documenting.
+      The places, nights, drinks and decisions that happen
+      after the sun goes down.
     </p>
 
   </section>
 
+  <section class="feature">
 
-  <section class="featured">
+    <article class="feature-card">
 
-    <div class="featured-card">
-
-      <div class="photo-placeholder">
-        Your photograph goes here
+      <div class="category">
+        After Hours · Coming Soon
       </div>
 
-      <div>
+      <h2>
+        Nothing To Report. Yet.
+      </h2>
 
-        <div class="category">
-          After Hours · Featured
-        </div>
+      <p>
+        The nightlife files are currently being compiled.
+        Please check back after dark.
+      </p>
 
-        <h2>
-          The Night We Don't Discuss
-        </h2>
+      <span class="read">
+        Coming Soon
+      </span>
 
-        <div class="meta">
-          Lower East Side · 1:47 AM
-        </div>
-
-        <p>
-          There are nights where the plan changes approximately
-          fourteen times and somehow everyone ends up exactly
-          where they shouldn't be.
-        </p>
-
-        <a href="#" class="read">
-          Read the story →
-        </a>
-
-      </div>
-
-    </div>
+    </article>
 
   </section>
 
+  <section class="posts">
 
-  <section class="stories">
+    <div class="section-title">
 
-    <div class="section-header">
-      <h2>Recent Nights</h2>
-      <span>Proceed with caution</span>
+      <h2>
+        Coming Soon
+      </h2>
+
+      <span>
+        More developments pending
+      </span>
+
     </div>
 
+    <article class="post">
 
-    <article class="story">
-
-      <div class="story-number">
+      <div class="post-number">
         001
       </div>
 
       <div>
 
         <h3>
-          A Completely Reasonable Thursday
+          Coming Soon
         </h3>
 
         <p>
-          We had dinner reservations. We had a plan.
-          Neither survived the evening.
+          More after-hours developments coming soon.
         </p>
 
-      </div>
-
-      <div class="story-meta">
-
-        <div>
-          <span class="label">Neighborhood</span>
-          <span class="value">West Village</span>
-        </div>
-
-        <div>
-          <span class="label">End Time</span>
-          <span class="value">3:12 AM</span>
+        <div class="date">
+          Coming Soon
         </div>
 
       </div>
 
     </article>
 
+    <article class="post">
 
-    <article class="story">
-
-      <div class="story-number">
+      <div class="post-number">
         002
       </div>
 
       <div>
 
         <h3>
-          The Birthday Incident
+          Coming Soon
         </h3>
 
         <p>
-          A birthday, several martinis, and one decision
-          that seemed significantly better at the time.
+          More after-hours developments coming soon.
         </p>
 
-      </div>
-
-      <div class="story-meta">
-
-        <div>
-          <span class="label">Neighborhood</span>
-          <span class="value">SoHo</span>
-        </div>
-
-        <div>
-          <span class="label">End Time</span>
-          <span class="value">4:06 AM</span>
+        <div class="date">
+          Coming Soon
         </div>
 
       </div>
 
     </article>
 
+    <article class="post">
 
-    <article class="story">
-
-      <div class="story-number">
+      <div class="post-number">
         003
       </div>
 
       <div>
 
         <h3>
-          How Did We Get Here?
+          Coming Soon
         </h3>
 
         <p>
-          A short investigation into a series of events
-          none of us can fully explain.
+          More after-hours developments coming soon.
         </p>
 
-      </div>
-
-      <div class="story-meta">
-
-        <div>
-          <span class="label">Neighborhood</span>
-          <span class="value">Downtown</span>
-        </div>
-
-        <div>
-          <span class="label">End Time</span>
-          <span class="value">Classified</span>
+        <div class="date">
+          Coming Soon
         </div>
 
       </div>
 
     </article>
 
+    <article class="post">
 
-    <article class="story">
-
-      <div class="story-number">
+      <div class="post-number">
         004
       </div>
 
       <div>
 
         <h3>
-          The Girls Were Involved
+          Coming Soon
         </h3>
 
         <p>
-          Enough said.
+          More after-hours developments coming soon.
         </p>
 
-      </div>
-
-      <div class="story-meta">
-
-        <div>
-          <span class="label">Neighborhood</span>
-          <span class="value">Multiple</span>
-        </div>
-
-        <div>
-          <span class="label">Evidence</span>
-          <span class="value">Extensive</span>
+        <div class="date">
+          Coming Soon
         </div>
 
       </div>
@@ -622,10 +515,11 @@
 
   </section>
 
-
   <footer>
 
-    <h2>Just Between Us.</h2>
+    <h2>
+      Just Between Us.
+    </h2>
 
     <p>
       New York · Dating · Life · Other Developments
