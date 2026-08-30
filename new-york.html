@@ -133,10 +133,33 @@
       color: var(--brown-light);
     }
 
-    .feature {
+    .places {
       max-width: 1100px;
-      margin: 0 auto 80px;
-      padding: 0 30px;
+      margin: 0 auto;
+      padding: 0 30px 100px;
+    }
+
+    .section-title {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .section-title h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 42px;
+      font-weight: 500;
+    }
+
+    .section-title span {
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brown-light);
     }
 
     .feature-grid {
@@ -197,89 +220,6 @@
       padding-bottom: 6px;
     }
 
-    .places {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 30px 100px;
-    }
-
-    .section-title {
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .section-title h2 {
-      font-family: 'Cormorant Garamond', serif;
-      color: var(--wine);
-      font-size: 42px;
-      font-weight: 500;
-    }
-
-    .section-title span {
-      font-size: 8px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--brown-light);
-    }
-
-    .place {
-      border-top: 1px solid var(--line);
-      padding: 38px 0;
-      display: grid;
-      grid-template-columns: 90px 1fr 220px;
-      gap: 30px;
-    }
-
-    .place-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 25px;
-      color: var(--gold);
-    }
-
-    .place h3 {
-      font-family: 'Cormorant Garamond', serif;
-      color: var(--wine);
-      font-size: 38px;
-      line-height: .95;
-      font-weight: 500;
-      margin-bottom: 13px;
-    }
-
-    .place p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      line-height: 1.4;
-      color: var(--brown-light);
-      max-width: 650px;
-      margin-bottom: 20px;
-    }
-
-    .place-meta {
-      border-left: 1px solid var(--line);
-      padding-left: 25px;
-    }
-
-    .meta-row {
-      margin-bottom: 18px;
-    }
-
-    .meta-label {
-      font-size: 8px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 5px;
-    }
-
-    .meta-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px;
-    }
-
     footer {
       background: var(--brown);
       color: var(--cream);
@@ -303,6 +243,7 @@
     }
 
     @media (max-width: 750px) {
+
       nav {
         gap: 17px;
       }
@@ -313,22 +254,17 @@
 
       .feature-card {
         padding: 45px 30px;
+        min-height: auto;
       }
 
       .feature-card h2 {
         font-size: 45px;
       }
 
-      .place {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .place-meta {
-        border-left: none;
-        border-top: 1px solid var(--line);
-        padding-left: 0;
-        padding-top: 20px;
+      .section-title {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
       }
     }
   </style>
@@ -405,7 +341,19 @@
 
   </section>
 
-  <section class="feature">
+  <section class="places">
+
+    <div class="section-title">
+
+      <h2>
+        Personally Investigated
+      </h2>
+
+      <span>
+        Newest first
+      </span>
+
+    </div>
 
     <div class="feature-grid">
 
@@ -416,17 +364,42 @@
         </div>
 
         <h2>
-          Bar Sprezzatura
+          The Rosevale Cocktail Room
         </h2>
 
         <p>
-          Rooftop Italian summer vibes in Hell's Kitchen.
-          A very good place to end the workday with a spritz
-          and an espresso martini.
+          Jazz bar vibes in Hell's Kitchen with an amazing martini—and
+          as many olives as you could want. I got three, obviously.
+          The inside can get pretty loud, so the outdoor patio is
+          definitely the move. Really chill and good vibes.
         </p>
 
         <span class="read">
-          Happy Hour · 8 / 10
+          Drinks · 9 / 10
+        </span>
+
+      </article>
+
+      <article class="feature-card">
+
+        <div class="category">
+          New York · Dinner
+        </div>
+
+        <h2>
+          Miss Nellie's
+        </h2>
+
+        <p>
+          Old-timey speakeasy vibes in Hell's Kitchen. The American
+          food is good, but nothing out of the ordinary—the atmosphere
+          is definitely the reason to go. The Filthy Martini was not
+          filthy and tasted deathly of vermouth. Ask for the Textile
+          Room when making a reservation for the cool back room.
+        </p>
+
+        <span class="read">
+          Dinner · 7 / 10
         </span>
 
       </article>
@@ -452,306 +425,29 @@
 
       </article>
 
-    </div>
+      <article class="feature-card">
 
-  </section>
+        <div class="category">
+          New York · Drinks
+        </div>
 
-  <section class="places">
-
-    <div class="section-title">
-
-      <h2>
-        Recent Places
-      </h2>
-
-      <span>
-        Personally investigated
-      </span>
-
-    </div>
-
-    <article class="place">
-
-      <div class="place-number">
-        001
-      </div>
-
-      <div>
-
-        <h3>
+        <h2>
           Bar Sprezzatura
-        </h3>
+        </h2>
 
         <p>
-          Italian summer vibes on a Hell's Kitchen rooftop.
-          I went for happy hour and the food was small portions
-          but pretty good. The spritz was good, but the espresso
-          martini was the real winner.
-
-          Three shared apps and about two and a half drinks each
-          came out to $55 per person before tip, which honestly
-          feels pretty reasonable for a rooftop in Manhattan.
+          Rooftop Italian summer vibes in Hell's Kitchen.
+          A very good place to end the workday with a spritz
+          and an espresso martini.
         </p>
 
-      </div>
+        <span class="read">
+          Happy Hour · 8 / 10
+        </span>
 
-      <div class="place-meta">
+      </article>
 
-        <div class="meta-row">
-          <div class="meta-label">
-            Best For
-          </div>
-
-          <div class="meta-value">
-            Quick happy hour
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Vibe
-          </div>
-
-          <div class="meta-value">
-            Italian summer
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Would I Go Back?
-          </div>
-
-          <div class="meta-value">
-            Yes
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Rating
-          </div>
-
-          <div class="meta-value">
-            8 / 10
-          </div>
-        </div>
-
-      </div>
-
-    </article>
-
-    <article class="place">
-
-      <div class="place-number">
-        002
-      </div>
-
-      <div>
-
-        <h3>
-          Swan Club
-        </h3>
-
-        <p>
-          An intimate little cocktail bar on the Lower East Side
-          with moody lighting and not many seats. The martini
-          was REALLY good.
-
-          I didnt get the tab, so I cant speak to the price,
-          but this feels much more like a date night spot than
-          a girls night spot. For girls night, I think we can
-          find somewhere better. For a date, absolutely.
-        </p>
-
-      </div>
-
-      <div class="place-meta">
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Best For
-          </div>
-
-          <div class="meta-value">
-            Date night
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Vibe
-          </div>
-
-          <div class="meta-value">
-            Moody and intimate
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Would I Go Back?
-          </div>
-
-          <div class="meta-value">
-            Yes
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Rating
-          </div>
-
-          <div class="meta-value">
-            8 / 10
-          </div>
-        </div>
-
-      </div>
-
-    </article>
-
-    <article class="place">
-
-      <div class="place-number">
-        003
-      </div>
-
-      <div>
-
-        <h3>
-          Miss Nellie's
-        </h3>
-
-        <p>
-          Old-timey speakeasy vibes in Hell's Kitchen. The American
-          food is good, but nothing out of the ordinary—the atmosphere
-          is definitely the reason to go.
-
-          I had The Filthy Martini, which unfortunately was neither
-          filthy nor particularly enjoyable. It tasted deathly of
-          vermouth. Skip that one.
-
-          When making a reservation, ask for the Textile Room to get
-          seated in the cool back room.
-        </p>
-
-      </div>
-
-      <div class="place-meta">
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Best For
-          </div>
-
-          <div class="meta-value">
-            Dinner
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Vibe
-          </div>
-
-          <div class="meta-value">
-            Old-timey speakeasy
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Would I Go Back?
-          </div>
-
-          <div class="meta-value">
-            Yes, for the vibes
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Rating
-          </div>
-
-          <div class="meta-value">
-            7 / 10
-          </div>
-        </div>
-
-      </div>
-
-    </article>
-
-    <article class="place">
-
-      <div class="place-number">
-        004
-      </div>
-
-      <div>
-
-        <h3>
-          The Rosevale Cocktail Room
-        </h3>
-
-        <p>
-          Jazz bar vibes in Hell's Kitchen with an amazing martini—and
-          as many olives as you could want. I got three, obviously.
-
-          The inside can get pretty loud, so the outdoor patio is
-          definitely the move. Really chill and good vibes.
-        </p>
-
-      </div>
-
-      <div class="place-meta">
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Best For
-          </div>
-
-          <div class="meta-value">
-            Drinks
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Vibe
-          </div>
-
-          <div class="meta-value">
-            Chill jazz bar
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Would I Go Back?
-          </div>
-
-          <div class="meta-value">
-            Absolutely
-          </div>
-        </div>
-
-        <div class="meta-row">
-          <div class="meta-label">
-            Rating
-          </div>
-
-          <div class="meta-value">
-            9 / 10
-          </div>
-        </div>
-
-      </div>
-
-    </article>
+    </div>
 
   </section>
 
