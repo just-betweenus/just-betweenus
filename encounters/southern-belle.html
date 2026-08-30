@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Southern Belle · Just Between Us</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+    :root {
+      --cream: #f6f0e7;
+      --ivory: #fbf8f3;
+      --wine: #591c2a;
+      --brown: #332822;
+      --brown-light: #75665d;
+      --gold: #b4965a;
+      --line: #d9cec0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 9px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    header {
+      text-align: center;
+      padding: 48px 30px 35px;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--brown-light);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 500;
+      letter-spacing: -3px;
+      line-height: .85;
+      color: var(--wine);
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 22px;
+      color: var(--brown-light);
+    }
+
+    nav {
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 34px;
+      padding: 17px 20px;
+    }
+
+    nav a {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--wine);
+    }
+
+    .article-header {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 85px 30px 55px;
+      text-align: center;
+    }
+
+    .category {
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .article-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: clamp(60px, 10vw, 110px);
+      font-weight: 500;
+      line-height: .82;
+      letter-spacing: -3px;
+    }
+
+    .meta {
+      margin-top: 28px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 10px 30px 100px;
+    }
+
+    .article p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      line-height: 1.45;
+      color: var(--brown);
+      margin-bottom: 18px;
+    }
+
+    .article p:first-child {
+      font-size: 28px;
+      line-height: 1.35;
+      color: var(--wine);
+    }
+
+    .between-us {
+      margin-top: 55px;
+      padding-top: 35px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .between-us p {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine);
+      font-size: 30px;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    .back {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 30px 80px;
+      text-align: center;
+    }
+
+    .back a {
+      display: inline-block;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--wine);
+      border-bottom: 1px solid var(--wine);
+      padding-bottom: 7px;
+    }
+
+    footer {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: #eadbc8;
+    }
+
+    footer p {
+      margin-top: 14px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bdaea1;
+    }
+
+    @media (max-width: 750px) {
+
+      nav {
+        gap: 17px;
+      }
+
+      .article-header {
+        padding: 65px 30px 45px;
+      }
+
+      .article p {
+        font-size: 20px;
+      }
+
+      .article p:first-child {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    Private Record · New York · Est. 2026
+  </div>
+
+  <header>
+
+    <div class="location">
+      Manhattan · The Encounters
+    </div>
+
+    <div class="logo">
+      Just Between Us
+    </div>
+
+    <div class="tagline">
+      You didnt hear it from me.
+    </div>
+
+  </header>
+
+  <nav>
+
+    <a href="../index.html">
+      Home
+    </a>
+
+    <a href="../encounters.html">
+      The Encounters
+    </a>
+
+    <a href="../after-hours.html">
+      After Hours
+    </a>
+
+    <a href="../debrief.html">
+      The Debrief
+    </a>
+
+    <a href="../new-york.html">
+      New York
+    </a>
+
+    <a href="../receipts.html">
+      The Receipts
+    </a>
+
+    <a href="../archive.html">
+      The Archive
+    </a>
+
+  </nav>
+
+  <section class="article-header">
+
+    <div class="category">
+      The Encounters · 002
+    </div>
+
+    <h1>
+      The Southern Belle
+    </h1>
+
+    <div class="meta">
+      New York · August 2026
+    </div>
+
+  </section>
+
+  <article class="article">
+
+    <p>
+      There are some people who exist in your life in chapters.
+    </p>
+
+    <p>
+      You meet them, something happens, you move on, and somehow, years later, they find their way back into the story.
+    </p>
+
+    <p>
+      Southern Belle was one of those people.
+    </p>
+
+    <p>
+      We met in 2022 when I was visiting his friend at college. We hit it off immediately, spent the weekend together, and then two months later he came to visit me for my 21st birthday. Shortly after that, I lost interest and cut him loose, which, if you know me, probably will not come as a surprise.
+    </p>
+
+    <p>
+      Years later, he was back.
+    </p>
+
+    <p>
+      This time, he wanted to come to New York and stay with me for the whole weekend. I was not interested in committing to that, so we settled on dinner and drinks. Simple enough.
+    </p>
+
+    <p>
+      The night started going downhill before we even left my apartment.
+    </p>
+
+    <p>
+      He arrived dressed in what can only be described as his interpretation of a redneck country club uniform, complete with boots and pants with a hole in them. He left the toilet seat up, walked around my apartment in his shoes, and kept trying to sit on my bed after spending 2 hours on the LIRR.
+    </p>
+
+    <p>
+      Little things. But enough little things to make me start wondering why I had agreed to this.
+    </p>
+
+    <p>
+      By dinner, I decided to make one thing very clear: we were not sleeping together.
+    </p>
+
+    <p>
+      He was disappointed. I was not particularly concerned.
+    </p>
+
+    <p>
+      Dinner itself was actually fine. Then we went for drinks, and somehow ended up in a conversation about women, men, and what it is actually like to move through the world as a woman.
+    </p>
+
+    <p>
+      This is where things really fell apart.
+    </p>
+
+    <p>
+      I tried explaining that sometimes you do not need someone to fix your experience or explain why it might not be that bad. Sometimes you just need them to listen.
+    </p>
+
+    <p>
+      He had other ideas.
+    </p>
+
+    <p>
+      By the time we left the bar, I was upset, he was defensive, and somehow I was being argued with about my own experience. Not exactly the cocktail bar conversation I had envisioned.
+    </p>
+
+    <p>
+      Unfortunately, the night was still not over.
+    </p>
+
+    <p>
+      He stayed at my apartment, and despite very clear instructions that this was strictly a place to sleep and nothing else, I spent the entire night being pushed closer and closer to the edge of my own bed.
+    </p>
+
+    <p>
+      Eight times.
+    </p>
+
+    <p>
+      I woke him up eight times.
+    </p>
+
+    <p>
+      By morning, he remembered one.
+    </p>
+
+    <p>
+      I remembered all eight.
+    </p>
+
+    <p>
+      So that was The Southern Belle.
+    </p>
+
+    <p>
+      A reunion that probably should have stayed in 2022, a dinner that turned into an argument, and one of the worst nights of sleep I have had in a very long time.
+    </p>
+
+    <p>
+      Maybe the signs were there when he showed up in those boots.
+    </p>
+
+    <p>
+      Maybe I should have sent him home after the toilet seat.
+    </p>
+
+    <p>
+      Either way, some people are better left exactly where you found them.
+    </p>
+
+    <div class="between-us">
+
+      <p>
+        And thats between us.
+      </p>
+
+    </div>
+
+  </article>
+
+  <div class="back">
+
+    <a href="../encounters.html">
+      Back to The Encounters
+    </a>
+
+  </div>
+
+  <footer>
+
+    <h2>
+      Just Between Us.
+    </h2>
+
+    <p>
+      New York · Dating · Life · Other Developments
+    </p>
+
+  </footer>
+
+</body>
+</html>
