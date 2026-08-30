@@ -37,6 +37,8 @@
       text-decoration: none;
     }
 
+    /* ---------- TOP BAR ---------- */
+
     .top-bar {
       background: var(--wine);
       color: var(--cream);
@@ -47,9 +49,11 @@
       text-transform: uppercase;
     }
 
+    /* ---------- HEADER ---------- */
+
     header {
       text-align: center;
-      padding: 48px 30px 35px;
+      padding: 45px 30px 32px;
       background: var(--ivory);
       border-bottom: 1px solid var(--line);
     }
@@ -58,7 +62,7 @@
       font-size: 9px;
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       color: var(--brown-light);
     }
 
@@ -75,9 +79,11 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 18px;
       font-style: italic;
-      margin-top: 22px;
+      margin-top: 20px;
       color: var(--brown-light);
     }
+
+    /* ---------- NAVIGATION ---------- */
 
     nav {
       background: var(--ivory);
@@ -93,117 +99,204 @@
       font-size: 9px;
       letter-spacing: 2px;
       text-transform: uppercase;
+      position: relative;
+      transition: color .2s ease;
     }
 
     nav a:hover {
       color: var(--wine);
     }
 
-    .article-header {
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -6px;
+      left: 0;
+      background: var(--wine);
+      transition: width .2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- STORY HEADER ---------- */
+
+    .story-header {
       max-width: 900px;
       margin: 0 auto;
-      padding: 85px 30px 55px;
+      padding: 75px 30px 45px;
       text-align: center;
     }
 
-    .category {
-      color: var(--gold);
+    .eyebrow {
       font-size: 9px;
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 22px;
+      color: var(--gold);
+      margin-bottom: 20px;
     }
 
-    .article-header h1 {
+    .story-header h1 {
       font-family: 'Cormorant Garamond', serif;
-      color: var(--wine);
-      font-size: clamp(60px, 10vw, 110px);
+      font-size: clamp(60px, 9vw, 110px);
       font-weight: 500;
-      line-height: .82;
-      letter-spacing: -3px;
+      line-height: .85;
+      letter-spacing: -4px;
+      color: var(--wine);
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-style: italic;
+      color: var(--brown-light);
+      margin-top: 25px;
     }
 
     .meta {
-      margin-top: 28px;
-      font-size: 9px;
+      margin-top: 22px;
+      font-size: 8px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--brown-light);
     }
 
-    .article {
-      max-width: 720px;
+    /* ---------- STORY ---------- */
+
+    .story {
+      max-width: 700px;
       margin: 0 auto;
-      padding: 10px 30px 100px;
+      padding: 0 30px 70px;
     }
 
-    .article p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      line-height: 1.45;
-      color: var(--brown);
-      margin-bottom: 18px;
+    .section {
+      margin-bottom: 43px;
     }
 
-    .article p:first-child {
-      font-size: 28px;
-      line-height: 1.35;
-      color: var(--wine);
+    .section-label {
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
     }
 
-    .between-us {
-      margin-top: 55px;
-      padding-top: 35px;
-      border-top: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .between-us p {
+    .section h2 {
       font-family: 'Cormorant Garamond', serif;
       color: var(--wine);
-      font-size: 30px;
-      font-style: italic;
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      line-height: 1.48;
+      margin-bottom: 13px;
+    }
+
+    .section p:last-child {
       margin-bottom: 0;
     }
 
-    .back {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 30px 80px;
-      text-align: center;
+    .highlight {
+      border-left: 2px solid var(--gold);
+      padding: 8px 20px;
+      margin: 20px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      line-height: 1.15;
+      font-style: italic;
+      color: var(--wine);
     }
 
-    .back a {
-      display: inline-block;
-      font-size: 9px;
+    /* ---------- VERDICT ---------- */
+
+    .verdict {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 60px 30px;
+    }
+
+    .verdict-label {
+      font-size: 8px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #d9bda0;
+      margin-bottom: 13px;
+    }
+
+    .rating {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 100px;
+      line-height: .8;
+      font-weight: 500;
+    }
+
+    .rating span {
+      font-size: 38px;
+    }
+
+    .verdict-text {
+      max-width: 520px;
+      margin: 25px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .verdict-details {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .detail-label {
+      display: block;
+      font-size: 7px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--wine);
-      border-bottom: 1px solid var(--wine);
-      padding-bottom: 7px;
+      color: #d9bda0;
+      margin-bottom: 6px;
     }
+
+    .detail-answer {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+    }
+
+    /* ---------- FOOTER ---------- */
 
     footer {
       background: var(--brown);
       color: var(--cream);
       text-align: center;
-      padding: 65px 20px;
+      padding: 55px 20px;
     }
 
     footer h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 48px;
+      font-size: 45px;
       font-weight: 500;
       color: #eadbc8;
     }
 
     footer p {
-      margin-top: 14px;
+      margin-top: 12px;
       font-size: 8px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: #bdaea1;
     }
+
+    /* ---------- MOBILE ---------- */
 
     @media (max-width: 750px) {
 
@@ -211,16 +304,37 @@
         gap: 17px;
       }
 
-      .article-header {
-        padding: 65px 30px 45px;
+      .story-header {
+        padding-top: 60px;
       }
 
-      .article p {
-        font-size: 20px;
+      .story-header h1 {
+        letter-spacing: -2px;
       }
 
-      .article p:first-child {
-        font-size: 25px;
+      .section {
+        margin-bottom: 38px;
+      }
+
+      .section h2 {
+        font-size: 32px;
+      }
+
+      .section p {
+        font-size: 18px;
+        line-height: 1.45;
+      }
+
+      .highlight {
+        font-size: 22px;
+      }
+
+      .rating {
+        font-size: 85px;
+      }
+
+      .verdict-details {
+        gap: 35px;
       }
     }
   </style>
@@ -231,6 +345,7 @@
   <div class="top-bar">
     Private Record · New York · Est. 2026
   </div>
+
 
   <header>
 
@@ -248,181 +363,377 @@
 
   </header>
 
+
   <nav>
 
-    <a href="../index.html">
-      Home
-    </a>
+    <a href="../index.html">Home</a>
 
-    <a href="../encounters.html">
-      The Encounters
-    </a>
+    <a href="../encounters.html">The Encounters</a>
 
-    <a href="../after-hours.html">
-      After Hours
-    </a>
+    <a href="../after-hours.html">After Hours</a>
 
-    <a href="../debrief.html">
-      The Debrief
-    </a>
+    <a href="../debrief.html">The Debrief</a>
 
-    <a href="../new-york.html">
-      New York
-    </a>
+    <a href="../new-york.html">New York</a>
 
-    <a href="../receipts.html">
-      The Receipts
-    </a>
+    <a href="../receipts.html">The Receipts</a>
 
-    <a href="../archive.html">
-      The Archive
-    </a>
+    <a href="../archive.html">The Archive</a>
 
   </nav>
 
-  <section class="article-header">
 
-    <div class="category">
-      The Encounters · 002
+  <section class="story-header">
+
+    <div class="eyebrow">
+      Encounter No. 002
     </div>
 
     <h1>
       The Southern Belle
     </h1>
 
+    <div class="subtitle">
+      A reunion, a questionable outfit, an argument about women and absolutely no sleep.
+    </div>
+
     <div class="meta">
-      New York · August 2026
+      August 2026 · New York
     </div>
 
   </section>
 
-  <article class="article">
 
-    <p>
-      There are some people who exist in your life in chapters.
-    </p>
+  <main class="story">
 
-    <p>
-      You meet them, something happens, you move on, and somehow, years later, they find their way back into the story.
-    </p>
 
-    <p>
-      Southern Belle was one of those people.
-    </p>
+    <section class="section">
 
-    <p>
-      We met in 2022 when I was visiting his friend at college. We hit it off immediately, spent the weekend together, and then two months later he came to visit me for my 21st birthday. Shortly after that, I lost interest and cut him loose, which, if you know me, probably will not come as a surprise.
-    </p>
-
-    <p>
-      Years later, he was back.
-    </p>
-
-    <p>
-      This time, he wanted to come to New York and stay with me for the whole weekend. I was not interested in committing to that, so we settled on dinner and drinks. Simple enough.
-    </p>
-
-    <p>
-      The night started going downhill before we even left my apartment.
-    </p>
-
-    <p>
-      He arrived dressed in what can only be described as his interpretation of a redneck country club uniform, complete with boots and pants with a hole in them. He left the toilet seat up, walked around my apartment in his shoes, and kept trying to sit on my bed after spending 2 hours on the LIRR.
-    </p>
-
-    <p>
-      Little things. But enough little things to make me start wondering why I had agreed to this.
-    </p>
-
-    <p>
-      By dinner, I decided to make one thing very clear: we were not sleeping together.
-    </p>
-
-    <p>
-      He was disappointed. I was not particularly concerned.
-    </p>
-
-    <p>
-      Dinner itself was actually fine. Then we went for drinks, and somehow ended up in a conversation about women, men, and what it is actually like to move through the world as a woman.
-    </p>
-
-    <p>
-      This is where things really fell apart.
-    </p>
-
-    <p>
-      I tried explaining that sometimes you do not need someone to fix your experience or explain why it might not be that bad. Sometimes you just need them to listen.
-    </p>
-
-    <p>
-      He had other ideas.
-    </p>
-
-    <p>
-      By the time we left the bar, I was upset, he was defensive, and somehow I was being argued with about my own experience. Not exactly the cocktail bar conversation I had envisioned.
-    </p>
-
-    <p>
-      Unfortunately, the night was still not over.
-    </p>
-
-    <p>
-      He stayed at my apartment, and despite very clear instructions that this was strictly a place to sleep and nothing else, I spent the entire night being pushed closer and closer to the edge of my own bed.
-    </p>
-
-    <p>
-      Eight times.
-    </p>
-
-    <p>
-      I woke him up eight times.
-    </p>
-
-    <p>
-      By morning, he remembered one.
-    </p>
-
-    <p>
-      I remembered all eight.
-    </p>
-
-    <p>
-      So that was The Southern Belle.
-    </p>
-
-    <p>
-      A reunion that probably should have stayed in 2022, a dinner that turned into an argument, and one of the worst nights of sleep I have had in a very long time.
-    </p>
-
-    <p>
-      Maybe the signs were there when he showed up in those boots.
-    </p>
-
-    <p>
-      Maybe I should have sent him home after the toilet seat.
-    </p>
-
-    <p>
-      Either way, some people are better left exactly where you found them.
-    </p>
-
-    <div class="between-us">
+      <div class="section-label">
+        The History
+      </div>
 
       <p>
-        And thats between us.
+        I have known The Southern Belle since around 2022.
       </p>
+
+      <p>
+        I visited one of his friends at college, we hit it off and spent the weekend together. A couple months later, he came to visit me at school for my twenty first birthday.
+      </p>
+
+      <p>
+        Then I quickly cut him loose.
+      </p>
+
+      <p>
+        Nothing dramatic. I just get tired of people.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Return
+      </div>
+
+      <p>
+        Somehow, years later, he was back.
+      </p>
+
+      <p>
+        He wanted to stay for the entire weekend. I said absolutely not. Dinner and drinks was enough of a reunion for me.
+      </p>
+
+      <p>
+        He arrived at my apartment while I was getting ready, already calling me repeatedly because he was confused about something.
+      </p>
+
+      <p>
+        Fine. Whatever.
+      </p>
+
+      <p>
+        Then I opened the door.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The First Impression
+      </div>
+
+      <div class="highlight">
+        South Carolina collared shirt. Strange boots. Hole in the pants.
+      </div>
+
+      <p>
+        I looked at him and immediately thought: we are supposed to be going somewhere nice tonight.
+      </p>
+
+      <p>
+        I was dressed. I had a plan. Dinner followed by a cocktail bar.
+      </p>
+
+      <p>
+        And this was what he chose.
+      </p>
+
+      <p>
+        Unfortunately, the outfit was only the beginning.
+      </p>
+
+      <p>
+        The toilet seat was left up. He walked through my apartment with his shoes on. He kept trying to sit on my bed in clothes he had been wearing on the train.
+      </p>
+
+      <p>
+        I told him that if he continued, I would send him home.
+      </p>
+
+      <p>
+        I meant it.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Dinner
+      </div>
+
+      <p>
+        Before dinner got too far along, I decided to get something out of the way.
+      </p>
+
+      <p>
+        I asked him what exactly his intentions were for the night.
+      </p>
+
+      <p>
+        Eventually, after some dancing around the question, the answer became clear.
+      </p>
+
+      <div class="highlight">
+        Sex.
+      </div>
+
+      <p>
+        I told him that was not happening.
+      </p>
+
+      <p>
+        He said fine. I said good.
+      </p>
+
+      <p>
+        And honestly, dinner itself was fine. We talked. We caught up. Nothing terrible.
+      </p>
+
+      <p>
+        Then we went to the cocktail bar.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Conversation
+      </div>
+
+      <p>
+        Somewhere between martinis and midnight, we started talking about women.
+      </p>
+
+      <p>
+        Specifically, what it is like to be a young woman in New York. Being underestimated at work. Being uncomfortable on the subway. Being looked at in ways that make you feel less like a person and more like something being evaluated.
+      </p>
+
+      <p>
+        I was trying to explain my experience.
+      </p>
+
+      <p>
+        He was trying to explain it back to me.
+      </p>
+
+      <p>
+        Every point became a solution. Every experience became something I should have handled differently.
+      </p>
+
+      <p>
+        Then he informed me that being a man was hard too.
+      </p>
+
+      <div class="highlight">
+        He also did not see a problem with men looking at women like pieces of meat.
+      </div>
+
+      <p>
+        At that point, I was done.
+      </p>
+
+      <p>
+        I told him directly that I thought the way he was speaking was disrespectful, especially considering he has sisters and nieces.
+      </p>
+
+      <p>
+        He started arguing with me.
+      </p>
+
+      <p>
+        Of course he did.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Sleeping Situation
+      </div>
+
+      <p>
+        By the time we got home, I had already decided I wanted absolutely nothing to do with him.
+      </p>
+
+      <p>
+        I made the rules very clear.
+      </p>
+
+      <div class="highlight">
+        No touching. No cuddling. No funny business. You are here as a friend.
+      </div>
+
+      <p>
+        He agreed.
+      </p>
+
+      <p>
+        Then I spent the entire night waking him up because he kept slowly moving further and further into my side of the bed.
+      </p>
+
+      <p>
+        I counted.
+      </p>
+
+      <div class="highlight">
+        Eight times.
+      </div>
+
+      <p>
+        Eight times I woke him up, told him to move over and tried to reclaim my own bed.
+      </p>
+
+      <p>
+        I eventually put a pillow between us like a physical border because apparently my verbal one was not enough.
+      </p>
+
+      <p>
+        By morning, I had barely slept.
+      </p>
+
+      <p>
+        He asked how I slept.
+      </p>
+
+      <p>
+        I told him terribly.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Exit
+      </div>
+
+      <p>
+        He only remembered me waking him up once.
+      </p>
+
+      <p>
+        Convenient.
+      </p>
+
+      <p>
+        I was ready for him to leave. I was ready to get away from him. I was ready to sleep for approximately twelve hours.
+      </p>
+
+      <p>
+        So he left to meet his friends, and I went home for the weekend.
+      </p>
+
+      <p>
+        I got on the subway and thought about the entire experience.
+      </p>
+
+      <p>
+        And honestly?
+      </p>
+
+      <p>
+        It could not have gone worse.
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+  <section class="verdict">
+
+    <div class="verdict-label">
+      The Verdict
+    </div>
+
+    <div class="rating">
+      2<span>/10</span>
+    </div>
+
+    <div class="verdict-text">
+      Points awarded for dinner being fine.
+      Points immediately removed for everything that happened after.
+    </div>
+
+    <div class="verdict-details">
+
+      <div>
+        <span class="detail-label">
+          Would I see him again?
+        </span>
+
+        <span class="detail-answer">
+          No.
+        </span>
+      </div>
+
+      <div>
+        <span class="detail-label">
+          Should I have left this in 2022?
+        </span>
+
+        <span class="detail-answer">
+          Absolutely.
+        </span>
+      </div>
 
     </div>
 
-  </article>
+  </section>
 
-  <div class="back">
-
-    <a href="../encounters.html">
-      Back to The Encounters
-    </a>
-
-  </div>
 
   <footer>
 
