@@ -6,16 +6,13 @@
 
   <title>The Birthday Boy, Part II · Just Between Us</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
     :root {
       --cream: #f6f0e7;
       --ivory: #fbf8f3;
       --wine: #591c2a;
-      --wine-light: #7a3545;
       --brown: #332822;
       --brown-light: #75665d;
       --gold: #b4965a;
@@ -28,16 +25,11 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background: var(--ivory);
+      background: var(--cream);
       color: var(--brown);
-      font-family: "DM Sans", sans-serif;
+      font-family: 'DM Sans', sans-serif;
       font-weight: 300;
-      line-height: 1.8;
     }
 
     a {
@@ -45,286 +37,304 @@
       text-decoration: none;
     }
 
-    /* TOP BAR */
+    /* ---------- TOP BAR ---------- */
+
     .top-bar {
       background: var(--wine);
       color: var(--cream);
       text-align: center;
-      padding: 10px 20px;
-      font-size: 10px;
-      letter-spacing: 2.5px;
+      padding: 9px;
+      font-size: 9px;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    /* HEADER */
+    /* ---------- HEADER ---------- */
+
     header {
-      padding: 42px 20px 30px;
       text-align: center;
-      border-bottom: 1px solid var(--line);
+      padding: 45px 30px 32px;
       background: var(--ivory);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--brown-light);
     }
 
     .logo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 42px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 100px);
       font-weight: 500;
-      letter-spacing: -0.5px;
+      letter-spacing: -3px;
+      line-height: .85;
       color: var(--wine);
-      line-height: 1;
     }
 
     .tagline {
-      margin-top: 9px;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 20px;
       color: var(--brown-light);
     }
 
-    /* NAV */
+    /* ---------- NAVIGATION ---------- */
+
     nav {
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 28px;
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--line);
-      background: var(--ivory);
+      gap: 34px;
+      padding: 17px 20px;
     }
 
     nav a {
-      font-size: 10px;
-      letter-spacing: 1.8px;
+      font-size: 9px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--brown-light);
-      transition: color 0.2s ease;
+      position: relative;
+      transition: color .2s ease;
     }
 
     nav a:hover {
       color: var(--wine);
     }
 
-    /* STORY HEADER */
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -6px;
+      left: 0;
+      background: var(--wine);
+      transition: width .2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- STORY HEADER ---------- */
+
     .story-header {
-      max-width: 820px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 90px 30px 65px;
+      padding: 75px 30px 45px;
       text-align: center;
     }
 
     .eyebrow {
-      font-size: 10px;
-      letter-spacing: 3px;
+      font-size: 9px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .story-header h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(52px, 8vw, 82px);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(60px, 9vw, 110px);
       font-weight: 500;
-      line-height: 0.95;
+      line-height: .85;
+      letter-spacing: -4px;
       color: var(--wine);
-      margin-bottom: 24px;
     }
 
     .subtitle {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 23px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
       font-style: italic;
       color: var(--brown-light);
-      margin-bottom: 24px;
+      margin-top: 25px;
     }
 
     .meta {
-      font-size: 10px;
-      letter-spacing: 2px;
+      margin-top: 22px;
+      font-size: 8px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--brown-light);
     }
 
-    /* STORY */
+    /* ---------- STORY ---------- */
+
     .story {
       max-width: 700px;
       margin: 0 auto;
-      padding: 0 30px 100px;
+      padding: 0 30px 70px;
     }
 
-    .story-section {
-      margin-bottom: 70px;
+    .section {
+      margin-bottom: 43px;
     }
 
-    .story-section h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 34px;
-      font-weight: 500;
-      color: var(--wine);
-      margin-bottom: 22px;
-      line-height: 1.1;
-    }
-
-    .story-section p {
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: var(--brown);
-    }
-
-    .story-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .story-section strong {
-      font-weight: 500;
-    }
-
-    .story-section em {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 20px;
-    }
-
-    /* HIGHLIGHT */
-    .highlight {
-      margin: 45px 0;
-      padding: 32px 35px;
-      background: var(--cream);
-      border-left: 2px solid var(--gold);
-    }
-
-    .highlight p {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 25px;
-      line-height: 1.35;
-      font-style: italic;
-      color: var(--wine);
-      margin: 0;
-    }
-
-    /* VERDICT */
-    .verdict {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 55px 30px 80px;
-      border-top: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .verdict-label {
-      font-size: 9px;
+    .section-label {
+      font-size: 8px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 18px;
+      margin-bottom: 10px;
     }
 
-    .verdict-rating {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 52px;
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
       color: var(--wine);
-      line-height: 1;
+      font-size: 36px;
+      font-weight: 500;
       margin-bottom: 15px;
     }
 
-    .verdict-text {
-      font-family: "Cormorant Garamond", serif;
+    .section p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      line-height: 1.48;
+      margin-bottom: 13px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      border-left: 2px solid var(--gold);
+      padding: 8px 20px;
+      margin: 20px 0;
+      font-family: 'Cormorant Garamond', serif;
       font-size: 24px;
+      line-height: 1.15;
       font-style: italic;
-      color: var(--brown-light);
-      margin-bottom: 35px;
+      color: var(--wine);
+    }
+
+    /* ---------- VERDICT ---------- */
+
+    .verdict {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 60px 30px;
+    }
+
+    .verdict-label {
+      font-size: 8px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #d9bda0;
+      margin-bottom: 13px;
+    }
+
+    .rating {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 100px;
+      line-height: .8;
+      font-weight: 500;
+    }
+
+    .rating span {
+      font-size: 38px;
+    }
+
+    .verdict-text {
+      max-width: 520px;
+      margin: 25px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      line-height: 1.35;
     }
 
     .verdict-details {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      max-width: 450px;
-      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      margin-top: 35px;
+      flex-wrap: wrap;
     }
 
     .detail-label {
-      font-size: 9px;
+      display: block;
+      font-size: 7px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 5px;
+      color: #d9bda0;
+      margin-bottom: 6px;
     }
 
-    .detail-value {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 18px;
-      color: var(--brown);
+    .detail-answer {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
     }
 
-    /* FOOTER */
+    /* ---------- FOOTER ---------- */
+
     footer {
-      background: var(--wine);
+      background: var(--brown);
       color: var(--cream);
       text-align: center;
       padding: 55px 20px;
     }
 
-    footer .footer-logo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 31px;
-      margin-bottom: 12px;
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 45px;
+      font-weight: 500;
+      color: #eadbc8;
     }
 
     footer p {
-      font-size: 9px;
-      letter-spacing: 2px;
+      margin-top: 12px;
+      font-size: 8px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      opacity: 0.7;
+      color: #bdaea1;
     }
 
-    /* MOBILE */
-    @media (max-width: 600px) {
-      .logo {
-        font-size: 36px;
-      }
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 750px) {
 
       nav {
-        gap: 15px 20px;
+        gap: 17px;
       }
 
       .story-header {
-        padding: 65px 22px 50px;
+        padding-top: 60px;
       }
 
       .story-header h1 {
-        font-size: 54px;
+        letter-spacing: -2px;
       }
 
-      .subtitle {
-        font-size: 21px;
+      .section {
+        margin-bottom: 38px;
       }
 
-      .story {
-        padding: 0 22px 75px;
+      .section h2 {
+        font-size: 32px;
       }
 
-      .story-section {
-        margin-bottom: 55px;
-      }
-
-      .story-section h2 {
-        font-size: 30px;
-      }
-
-      .story-section p {
-        font-size: 15px;
+      .section p {
+        font-size: 18px;
+        line-height: 1.45;
       }
 
       .highlight {
-        padding: 25px;
-        margin: 35px 0;
-      }
-
-      .highlight p {
         font-size: 22px;
       }
 
-      .verdict {
-        padding: 45px 22px 65px;
+      .rating {
+        font-size: 85px;
+      }
+
+      .verdict-details {
+        gap: 35px;
       }
     }
   </style>
@@ -336,346 +346,426 @@
     Private Record · New York · Est. 2026
   </div>
 
+
   <header>
-    <a href="../index.html" class="logo">Just Between Us</a>
-    <div class="tagline">You didn't hear it from me.</div>
+
+    <div class="location">
+      Manhattan · The Encounters
+    </div>
+
+    <div class="logo">
+      Just Between Us
+    </div>
+
+    <div class="tagline">
+      You didn't hear it from me.
+    </div>
+
   </header>
 
+
   <nav>
+
     <a href="../index.html">Home</a>
+
     <a href="../encounters.html">The Encounters</a>
+
     <a href="../after-hours.html">After Hours</a>
+
     <a href="../debrief.html">The Debrief</a>
+
     <a href="../new-york.html">New York</a>
+
     <a href="../receipts.html">The Receipts</a>
+
     <a href="../archive.html">The Archive</a>
+
   </nav>
 
-  <main>
 
-    <section class="story-header">
-      <div class="eyebrow">Encounter No. 005</div>
+  <section class="story-header">
 
-      <h1>The Birthday Boy, Part II</h1>
+    <div class="eyebrow">
+      Encounter No. 005
+    </div>
 
-      <p class="subtitle">It was supposed to happen the next day.</p>
+    <h1>
+      The Birthday Boy, Part II
+    </h1>
 
-      <div class="meta">September 2026 · New York</div>
-    </section>
+    <div class="subtitle">
+      It was supposed to happen the next day.
+    </div>
 
-    <article class="story">
+    <div class="meta">
+      September 2026 · New York
+    </div>
 
-      <section class="story-section">
-        <h2>The Morning After</h2>
+  </section>
 
-        <p>
-          I woke up the next morning contemplating whether I was actually going to show up or what, exactly, the vibe was supposed to be.
-        </p>
 
-        <p>
-          It was already noon. No shower. No breakfast. No plan.
-        </p>
+  <main class="story">
 
-        <p>
-          My roommate ordered Chick-fil-A, which seemed like a reasonable enough place to start.
-        </p>
 
-        <p>
-          We decided we'd get ready very quickly and head over to Rocco's with some friends to watch the Gator game. I figured I'd text the Birthday Boy later. Maybe.
-        </p>
+    <section class="section">
 
-        <p>
-          So we went to Rocco's with a few guy friends and one of my girlfriends, settled in, and watched the game.
-        </p>
-
-        <p>
-          About an hour in, I decided to send it.
-        </p>
-
-        <div class="highlight">
-          <p>"Still out?"</p>
-        </div>
-
-        <p>
-          And then—
-        </p>
-
-        <p>
-          Nothing.
-        </p>
-
-        <p>
-          Radio silence.
-        </p>
-
-        <p>
-          Ouch.
-        </p>
-      </section>
-
-      <section class="story-section">
-        <h2>The Rightttt</h2>
-
-        <p>
-          I eventually decided to go to Swift Hibernian with my friend, and while we were settling in, she told me I should text him again.
-        </p>
-
-        <p>
-          I said, <strong>rightttt.</strong>
-        </p>
-
-        <p>
-          And then, three hours after my original text, he finally answered.
-        </p>
-
-        <p>
-          Apparently, he'd been busy that morning with birthday festivities and was now in Midtown.
-        </p>
-
-        <p>
-          But he would love to see me.
-        </p>
-
-        <p>
-          Eek.
-        </p>
-
-        <p>
-          The only problem was that I was already out and very much not going to Midtown.
-        </p>
-
-        <p>
-          So somehow, the plans changed.
-        </p>
-
-        <p>
-          I wasn't going to the bar.
-        </p>
-
-        <p>
-          He was going to come over.
-        </p>
-
-        <p>
-          Around 10.
-        </p>
-
-        <p>
-          It was about 7.
-        </p>
-
-        <p>
-          <strong>Okay. Great.</strong>
-        </p>
-      </section>
-
-      <section class="story-section">
-        <h2>The Preparation</h2>
-
-        <p>
-          I was excited.
-        </p>
-
-        <p>
-          I was also nervous.
-        </p>
-
-        <p>
-          This was finally happening, apparently.
-        </p>
-
-        <p>
-          I headed home because I figured I should probably eat something before he came over. I ate quickly, put away my dirty laundry, and turned on the little candle warmer light in my room to make everything feel appropriately moody.
-        </p>
-
-        <p>
-          I was, in other words, preparing.
-        </p>
-
-        <p>
-          He kept checking in every so often, which made me think this was actually happening.
-        </p>
-
-        <p>
-          Then came the comment.
-        </p>
-
-        <p>
-          He said something along the lines of, well, he snores, so he could just leave after I used him.
-        </p>
-
-        <p>
-          Excuse me?
-        </p>
-
-        <p>
-          It was a joke. I knew it was a joke.
-        </p>
-
-        <p>
-          But there is a difference between implying you're going to stay over, which I am perfectly happy to hear, and making it sound like I have just invited a stranger over for a transactional experience.
-        </p>
-
-        <p>
-          So I told him that was awful.
-        </p>
-
-        <p>
-          Thankfully, he immediately agreed and took it back, and we laughed about it.
-        </p>
-
-        <p>
-          Crisis averted.
-        </p>
-      </section>
-
-      <section class="story-section">
-        <h2>The Delay</h2>
-
-        <p>
-          At 9:30, I told him he could come whenever.
-        </p>
-
-        <p>
-          He replied that his friend was puking and he'd be another hour.
-        </p>
-
-        <p>
-          Yuck.
-        </p>
-
-        <p>
-          At this point, I was very nervous for him to come over, and now the whole thing was just being postponed over and over.
-        </p>
-
-        <p>
-          Whatever.
-        </p>
-
-        <p>
-          It wasn't like I was waiting up for him.
-        </p>
-
-        <p>
-          Then came another text.
-        </p>
-
-        <p>
-          He had to take his friend back. Apparently, the friend was staying with him and would not stop puking.
-        </p>
-
-        <p>
-          I believed him.
-        </p>
-
-        <p>
-          I was also disappointed.
-        </p>
-
-        <p>
-          And, honestly, I knew where this was headed.
-        </p>
-
-        <p>
-          I just said, <strong>Ok.</strong>
-        </p>
-
-        <p>
-          Then he asked:
-        </p>
-
-        <div class="highlight">
-          <p>"Can we hang out this week?"</p>
-        </div>
-
-        <p>
-          I said yea.
-        </p>
-
-        <p>
-          I'll believe it when I see it.
-        </p>
-
-        <p>
-          The ball was no longer in my court.
-        </p>
-
-        <p>
-          So I went to bed.
-        </p>
-      </section>
-
-      <section class="story-section">
-        <h2>The Follow</h2>
-
-        <p>
-          The next morning, I was lying in bed contemplating the entire situation when I saw it.
-        </p>
-
-        <p>
-          A new Instagram follow.
-        </p>
-
-        <p>
-          The Birthday Boy.
-        </p>
-
-        <p>
-          And then, shortly after, a few likes on some of my best photos.
-        </p>
-
-        <p>
-          Well.
-        </p>
-
-        <p>
-          He was still interested.
-        </p>
-
-        <p>
-          Heheh.
-        </p>
-
-        <p>
-          We'll see what happens.
-        </p>
-
-        <p>
-          <strong>To be continued.</strong>
-        </p>
-      </section>
-
-    </article>
-
-    <section class="verdict">
-
-      <div class="verdict-label">The Verdict</div>
-
-      <div class="verdict-rating">TBD</div>
-
-      <div class="verdict-text">To be continued...</div>
-
-      <div class="verdict-details">
-
-        <div>
-          <div class="detail-label">Initial Impression</div>
-          <div class="detail-value">Still interested.</div>
-        </div>
-
-        <div>
-          <div class="detail-label">Status</div>
-          <div class="detail-value">To be continued.</div>
-        </div>
-
+      <div class="section-label">
+        The Morning After
       </div>
 
+      <p>
+        I woke up the next morning contemplating whether I was actually going to show up or what, exactly, the vibe was supposed to be.
+      </p>
+
+      <p>
+        It was already noon. No shower. No breakfast. No plan.
+      </p>
+
+      <p>
+        My roommate ordered Chick-fil-A, which seemed like a reasonable enough place to start.
+      </p>
+
+      <p>
+        We decided we'd get ready very quickly and head over to Rocco's with some friends to watch the Gator game. I figured I'd text the Birthday Boy later. Maybe.
+      </p>
+
+      <p>
+        So we went to Rocco's with a few guy friends and one of my girlfriends, settled in, and watched the game.
+      </p>
+
+      <p>
+        About an hour in, I decided to send it.
+      </p>
+
+      <div class="highlight">
+        "Still out?"
+      </div>
+
+      <p>
+        And then—
+      </p>
+
+      <p>
+        Nothing.
+      </p>
+
+      <p>
+        Radio silence.
+      </p>
+
+      <p>
+        Ouch.
+      </p>
+
     </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Rightttt
+      </div>
+
+      <p>
+        I eventually decided to go to Swift Hibernian with my friend, and while we were settling in, she told me I should text him again.
+      </p>
+
+      <p>
+        I said, <strong>rightttt.</strong>
+      </p>
+
+      <p>
+        And then, three hours after my original text, he finally answered.
+      </p>
+
+      <p>
+        Apparently, he'd been busy that morning with birthday festivities and was now in Midtown.
+      </p>
+
+      <p>
+        But he would love to see me.
+      </p>
+
+      <p>
+        Eek.
+      </p>
+
+      <p>
+        The only problem was that I was already out and very much not going to Midtown.
+      </p>
+
+      <p>
+        So somehow, the plans changed.
+      </p>
+
+      <p>
+        I wasn't going to the bar.
+      </p>
+
+      <p>
+        He was going to come over.
+      </p>
+
+      <p>
+        Around 10.
+      </p>
+
+      <p>
+        It was about 7.
+      </p>
+
+      <p>
+        <strong>Okay. Great.</strong>
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Preparation
+      </div>
+
+      <p>
+        I was excited.
+      </p>
+
+      <p>
+        I was also nervous.
+      </p>
+
+      <p>
+        This was finally happening, apparently.
+      </p>
+
+      <p>
+        I headed home because I figured I should probably eat something before he came over. I ate quickly, put away my dirty laundry, and turned on the little candle warmer light in my room to make everything feel appropriately moody.
+      </p>
+
+      <p>
+        I was, in other words, preparing.
+      </p>
+
+      <p>
+        He kept checking in every so often, which made me think this was actually happening.
+      </p>
+
+      <p>
+        Then came the comment.
+      </p>
+
+      <p>
+        He said something along the lines of, well, he snores, so he could just leave after I used him.
+      </p>
+
+      <p>
+        Excuse me?
+      </p>
+
+      <p>
+        It was a joke. I knew it was a joke.
+      </p>
+
+      <p>
+        But there is a difference between implying you're going to stay over, which I am perfectly happy to hear, and making it sound like I have just invited a stranger over for a transactional experience.
+      </p>
+
+      <p>
+        So I told him that was awful.
+      </p>
+
+      <p>
+        Thankfully, he immediately agreed and took it back, and we laughed about it.
+      </p>
+
+      <p>
+        Crisis averted.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Delay
+      </div>
+
+      <p>
+        At 9:30, I told him he could come whenever.
+      </p>
+
+      <p>
+        He replied that his friend was puking and he'd be another hour.
+      </p>
+
+      <p>
+        Yuck.
+      </p>
+
+      <p>
+        At this point, I was very nervous for him to come over, and now the whole thing was just being postponed over and over.
+      </p>
+
+      <p>
+        Whatever.
+      </p>
+
+      <p>
+        It wasn't like I was waiting up for him.
+      </p>
+
+      <p>
+        Then came another text.
+      </p>
+
+      <p>
+        He had to take his friend back. Apparently, the friend was staying with him and would not stop puking.
+      </p>
+
+      <p>
+        I believed him.
+      </p>
+
+      <p>
+        I was also disappointed.
+      </p>
+
+      <p>
+        And, honestly, I knew where this was headed.
+      </p>
+
+      <p>
+        I just said, <strong>Ok.</strong>
+      </p>
+
+      <p>
+        Then he asked:
+      </p>
+
+      <div class="highlight">
+        "Can we hang out this week?"
+      </div>
+
+      <p>
+        I said yea.
+      </p>
+
+      <p>
+        I'll believe it when I see it.
+      </p>
+
+      <p>
+        The ball was no longer in my court.
+      </p>
+
+      <p>
+        So I went to bed.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <div class="section-label">
+        The Follow
+      </div>
+
+      <p>
+        The next morning, I was lying in bed contemplating the entire situation when I saw it.
+      </p>
+
+      <p>
+        A new Instagram follow.
+      </p>
+
+      <p>
+        The Birthday Boy.
+      </p>
+
+      <p>
+        And then, shortly after, a few likes on some of my best photos.
+      </p>
+
+      <p>
+        Well.
+      </p>
+
+      <p>
+        He was still interested.
+      </p>
+
+      <p>
+        Heheh.
+      </p>
+
+      <p>
+        We'll see what happens.
+      </p>
+
+      <p>
+        <strong>To be continued.</strong>
+      </p>
+
+    </section>
+
 
   </main>
 
+
+  <section class="verdict">
+
+    <div class="verdict-label">
+      The Verdict
+    </div>
+
+    <div class="rating">
+      TBD
+    </div>
+
+    <div class="verdict-text">
+      To be continued...
+    </div>
+
+    <div class="verdict-details">
+
+      <div>
+        <span class="detail-label">
+          Initial Impression
+        </span>
+
+        <span class="detail-answer">
+          Still interested.
+        </span>
+      </div>
+
+      <div>
+        <span class="detail-label">
+          Status
+        </span>
+
+        <span class="detail-answer">
+          To be continued.
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
   <footer>
-    <div class="footer-logo">Just Between Us.</div>
-    <p>New York · Dating · Life · Other Developments</p>
+
+    <h2>
+      Just Between Us.
+    </h2>
+
+    <p>
+      New York · Dating · Life · Other Developments
+    </p>
+
   </footer>
 
 </body>
