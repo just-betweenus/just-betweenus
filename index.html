@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,85 +153,85 @@
     }
 
     .featured-logo {
-  background: var(--cream);
-  border: 1px solid var(--line);
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 45px;
-  overflow: hidden;
-}
+      background: var(--cream);
+      border: 1px solid var(--line);
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 45px;
+      overflow: hidden;
+    }
 
-.matchbook {
-  width: min(100%, 390px);
-  aspect-ratio: 4 / 5;
-  background: var(--wine);
-  color: var(--cream);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 18px 18px 0 rgba(180, 150, 90, .20);
-  border: 1px solid rgba(246, 240, 231, .15);
-  padding: 42px 35px 32px;
-}
+    .matchbook {
+      width: min(100%, 390px);
+      aspect-ratio: 4 / 5;
+      background: var(--wine);
+      color: var(--cream);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 18px 18px 0 rgba(180, 150, 90, .20);
+      border: 1px solid rgba(246, 240, 231, .15);
+      padding: 42px 35px 32px;
+    }
 
-.matchbook::before {
-  content: '';
-  position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(246, 240, 231, .45);
-  pointer-events: none;
-}
+    .matchbook::before {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(246, 240, 231, .45);
+      pointer-events: none;
+    }
 
-.matchbook-top {
-  font-size: 8px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #d9bda0;
-  position: relative;
-  z-index: 1;
-}
+    .matchbook-top {
+      font-size: 8px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #d9bda0;
+      position: relative;
+      z-index: 1;
+    }
 
-.matchbook-glass {
-  width: 145px;
-  margin: 42px auto 30px;
-  position: relative;
-  z-index: 1;
-}
+    .matchbook-glass {
+      width: 145px;
+      margin: 42px auto 30px;
+      position: relative;
+      z-index: 1;
+    }
 
-.matchbook-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 58px;
-  font-weight: 500;
-  line-height: .85;
-  letter-spacing: -2px;
-  color: var(--cream);
-  position: relative;
-  z-index: 1;
-}
+    .matchbook-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 58px;
+      font-weight: 500;
+      line-height: .85;
+      letter-spacing: -2px;
+      color: var(--cream);
+      position: relative;
+      z-index: 1;
+    }
 
-.matchbook-subtitle {
-  margin-top: 17px;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 18px;
-  color: #eadfd4;
-  position: relative;
-  z-index: 1;
-}
+    .matchbook-subtitle {
+      margin-top: 17px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: #eadfd4;
+      position: relative;
+      z-index: 1;
+    }
 
-.matchbook-bottom {
-  margin-top: auto;
-  font-size: 8px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #d9bda0;
-  position: relative;
-  z-index: 1;
-}
+    .matchbook-bottom {
+      margin-top: auto;
+      font-size: 8px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #d9bda0;
+      position: relative;
+      z-index: 1;
+    }
 
     .featured-content {
       background: var(--wine);
@@ -320,6 +321,11 @@
     .story-card {
       border-top: 1px solid var(--line);
       padding-top: 18px;
+      transition: transform .2s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-3px);
     }
 
     .story-number {
@@ -548,125 +554,126 @@
 
   </section>
 
+  <!-- FEATURED: ENCOUNTER 005 -->
+
   <section class="featured">
 
     <div class="featured-logo">
 
-  <div class="matchbook">
+      <div class="matchbook">
 
-    <div class="matchbook-top">
-      Private Record · New York
+        <div class="matchbook-top">
+          Private Record · New York
+        </div>
+
+        <div class="matchbook-glass">
+
+          <svg viewBox="0 0 180 180" width="100%" xmlns="http://www.w3.org/2000/svg">
+
+            <path
+              d="M25 25 L155 25 L90 100 Z"
+              fill="none"
+              stroke="#f6f0e7"
+              stroke-width="2.5"
+              stroke-linejoin="round"
+            />
+
+            <line
+              x1="90"
+              y1="100"
+              x2="90"
+              y2="145"
+              stroke="#f6f0e7"
+              stroke-width="2.5"
+            />
+
+            <line
+              x1="55"
+              y1="145"
+              x2="125"
+              y2="145"
+              stroke="#f6f0e7"
+              stroke-width="2.5"
+            />
+
+            <circle
+              cx="90"
+              cy="63"
+              r="10"
+              fill="none"
+              stroke="#b4965a"
+              stroke-width="3"
+            />
+
+            <circle
+              cx="90"
+              cy="63"
+              r="2.5"
+              fill="#b4965a"
+            />
+
+            <line
+              x1="67"
+              y1="35"
+              x2="112"
+              y2="82"
+              stroke="#d9bda0"
+              stroke-width="1.5"
+            />
+
+          </svg>
+
+        </div>
+
+        <div class="matchbook-name">
+          Just<br>
+          Between Us
+        </div>
+
+        <div class="matchbook-subtitle">
+          You didn't hear it from me.
+        </div>
+
+        <div class="matchbook-bottom">
+          Dating · New York · Other Developments
+        </div>
+
+      </div>
+
     </div>
-
-    <div class="matchbook-glass">
-
-      <svg viewBox="0 0 180 180" width="100%" xmlns="http://www.w3.org/2000/svg">
-
-        <!-- Martini bowl -->
-        <path
-          d="M25 25 L155 25 L90 100 Z"
-          fill="none"
-          stroke="#f6f0e7"
-          stroke-width="2.5"
-          stroke-linejoin="round"
-        />
-
-        <!-- Stem -->
-        <line
-          x1="90"
-          y1="100"
-          x2="90"
-          y2="145"
-          stroke="#f6f0e7"
-          stroke-width="2.5"
-        />
-
-        <!-- Base -->
-        <line
-          x1="55"
-          y1="145"
-          x2="125"
-          y2="145"
-          stroke="#f6f0e7"
-          stroke-width="2.5"
-        />
-
-        <!-- Olive -->
-        <circle
-          cx="90"
-          cy="63"
-          r="10"
-          fill="none"
-          stroke="#b4965a"
-          stroke-width="3"
-        />
-
-        <!-- Olive center -->
-        <circle
-          cx="90"
-          cy="63"
-          r="2.5"
-          fill="#b4965a"
-        />
-
-        <!-- Cocktail pick -->
-        <line
-          x1="67"
-          y1="35"
-          x2="112"
-          y2="82"
-          stroke="#d9bda0"
-          stroke-width="1.5"
-        />
-
-      </svg>
-
-    </div>
-
-    <div class="matchbook-name">
-      Just<br>
-      Between Us
-    </div>
-
-    <div class="matchbook-subtitle">
-      You didn't hear it from me.
-    </div>
-
-    <div class="matchbook-bottom">
-      Dating · New York · Other Developments
-    </div>
-
-  </div>
-
-</div>
 
     <div class="featured-content">
 
       <div class="featured-category">
-        The Encounters · 001
+        The Encounters · 005
       </div>
 
       <h1>
-        The British Agent
+        The Birthday Boy,<br>
+        Part II
       </h1>
 
       <div class="featured-meta">
-        New York · August 2026
+        New York · September 2026
       </div>
 
       <p>
-        A Tinder match with a British accent, a mysterious
-        government job, questionable intentions and an
-        unfortunate ability to send voice memos.
+        The next day was supposed to be simple:
+        football, a few friends and maybe seeing the
+        Birthday Boy again. Instead, there was radio
+        silence, a last-minute change of plans and
+        an entirely different kind of night.
       </p>
 
-      <a href="encounters/british-agent.html" class="read-story">
+      <a href="encounters/birthday-boy-part-two.html" class="read-story">
         Read the story →
       </a>
 
     </div>
 
   </section>
+
+  <!-- RECENT DEVELOPMENTS -->
 
   <section class="section">
 
@@ -684,24 +691,24 @@
 
     <div class="story-grid">
 
-      <a href="new-york.html" class="story-card">
+      <a href="encounters/birthday-boy-part-two.html" class="story-card">
 
         <div class="story-number">
-          01 · NEW YORK
+          01 · THE ENCOUNTERS
         </div>
 
         <h3>
-          The Rosevale Cocktail Room
+          The Birthday Boy, Part II
         </h3>
 
         <p>
-          Jazz bar vibes, an amazing martini and as many
-          olives as you could want. The patio is definitely
-          the move.
+          The plans changed, the texts eventually came through,
+          and what was supposed to happen the next day became
+          its own little saga.
         </p>
 
         <div class="story-date">
-          August 2026
+          September 2026
         </div>
 
       </a>
@@ -713,39 +720,39 @@
         </div>
 
         <h3>
-          Miss Nellie's
+          Cafe Maud
         </h3>
 
         <p>
-          Old-timey speakeasy vibes in Hell's Kitchen.
-          Go for the atmosphere and ask for the Textile
-          Room when you make your reservation.
+          Frozen Aperol spritzes, personal pizzas and a
+          genuinely chic happy hour in the East Village.
+          A very good after-work meet-up.
         </p>
 
         <div class="story-date">
-          August 2026
+          September 2026
         </div>
 
       </a>
 
-      <a href="encounters/british-agent.html" class="story-card">
+      <a href="new-york.html" class="story-card">
 
         <div class="story-number">
-          03 · THE ENCOUNTERS
+          03 · NEW YORK
         </div>
 
         <h3>
-          The British Agent
+          Bar Revial
         </h3>
 
         <p>
-          A Tinder match, a British accent, a mysterious
-          government job and a first date that involved
-          considerably more making out than anticipated.
+          Two happy hour martinis for $9 each.
+          Need we say more? A fun little stop when
+          the assignment is drinks, not dinner.
         </p>
 
         <div class="story-date">
-          August 2026
+          September 2026
         </div>
 
       </a>
@@ -797,3 +804,4 @@
 
 </body>
 </html>
+```
