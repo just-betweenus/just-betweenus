@@ -3,201 +3,338 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>The Birthday Boy · Just Between Us</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
     :root {
-      --ivory: #f7f2e9;
-      --cream: #efe7da;
-      --wine: #5b1f2a;
-      --brown: #4a3930;
-      --gold: #a88958;
-      --muted: #786b61;
+      --cream: #f6f0e7;
+      --ivory: #fbf8f3;
+      --wine: #591c2a;
+      --brown: #332822;
+      --brown-light: #75665d;
+      --gold: #b4965a;
+      --line: #d9cec0;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      background: var(--ivory);
+      background: var(--cream);
       color: var(--brown);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.75;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------- TOP BAR ---------- */
+
+    .top-bar {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 9px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ---------- HEADER ---------- */
 
     header {
-      border-bottom: 1px solid rgba(91, 31, 42, 0.18);
-      padding: 18px 30px 16px;
       text-align: center;
+      padding: 45px 30px 32px;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
     }
 
-    .record {
-      font-size: 10px;
-      letter-spacing: 2px;
+    .location {
+      font-size: 9px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
+      margin-bottom: 20px;
+      color: var(--brown-light);
     }
 
     .logo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 34px;
-      font-weight: 600;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 500;
+      letter-spacing: -3px;
+      line-height: .85;
       color: var(--wine);
-      line-height: 1;
-      margin-bottom: 6px;
     }
 
     .tagline {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
       font-style: italic;
-      color: var(--muted);
+      margin-top: 20px;
+      color: var(--brown-light);
     }
 
+    /* ---------- NAVIGATION ---------- */
+
     nav {
-      margin-top: 18px;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--line);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 34px;
+      padding: 17px 20px;
     }
 
     nav a {
-      color: var(--brown);
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 1.2px;
+      font-size: 9px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      position: relative;
+      transition: color .2s ease;
     }
 
     nav a:hover {
       color: var(--wine);
     }
 
-    main {
-      max-width: 760px;
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -6px;
+      left: 0;
+      background: var(--wine);
+      transition: width .2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- STORY HEADER ---------- */
+
+    .story-header {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 75px 25px 100px;
+      padding: 75px 30px 45px;
+      text-align: center;
     }
 
     .eyebrow {
-      text-align: center;
-      font-size: 10px;
-      letter-spacing: 2.5px;
+      font-size: 9px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    h1 {
-      margin: 0;
-      text-align: center;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(48px, 8vw, 76px);
-      line-height: 0.95;
+    .story-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(60px, 9vw, 110px);
       font-weight: 500;
+      line-height: .85;
+      letter-spacing: -4px;
       color: var(--wine);
     }
 
     .subtitle {
-      text-align: center;
-      font-family: "Cormorant Garamond", serif;
+      font-family: 'Cormorant Garamond', serif;
       font-size: 21px;
       font-style: italic;
-      color: var(--muted);
-      margin: 18px auto 55px;
+      color: var(--brown-light);
+      margin-top: 25px;
     }
 
-    .intro {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 23px;
-      line-height: 1.55;
-      text-align: center;
-      max-width: 620px;
-      margin: 0 auto 60px;
-      color: var(--brown);
+    .meta {
+      margin-top: 22px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brown-light);
     }
 
-    h2 {
-      font-family: "Cormorant Garamond", serif;
+    /* ---------- STORY ---------- */
+
+    .story {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 30px 70px;
+    }
+
+    .section {
+      margin-bottom: 43px;
+    }
+
+    .section-label {
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
       color: var(--wine);
-      font-size: 31px;
-      font-weight: 600;
-      margin: 60px 0 22px;
-      line-height: 1.1;
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 15px;
     }
 
-    p {
-      font-size: 15px;
-      margin: 0 0 22px;
+    .section p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      line-height: 1.48;
+      margin-bottom: 13px;
     }
 
-    em {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 18px;
+    .section p:last-child {
+      margin-bottom: 0;
     }
 
-    strong {
-      color: var(--wine);
-      font-weight: 600;
-    }
-
-    .closing {
-      text-align: center;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 25px;
+    .highlight {
+      border-left: 2px solid var(--gold);
+      padding: 8px 20px;
+      margin: 20px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      line-height: 1.15;
       font-style: italic;
       color: var(--wine);
-      margin-top: 60px;
     }
 
-    .back {
+    /* ---------- VERDICT ---------- */
+
+    .verdict {
+      background: var(--wine);
+      color: var(--cream);
       text-align: center;
-      margin-top: 70px;
+      padding: 60px 30px;
     }
 
-    .back a {
-      color: var(--wine);
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 1.5px;
+    .verdict-label {
+      font-size: 8px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 5px;
+      color: #d9bda0;
+      margin-bottom: 13px;
     }
+
+    .rating {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 100px;
+      line-height: .8;
+      font-weight: 500;
+    }
+
+    .rating span {
+      font-size: 38px;
+    }
+
+    .verdict-text {
+      max-width: 520px;
+      margin: 25px auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .verdict-details {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .detail-label {
+      display: block;
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #d9bda0;
+      margin-bottom: 6px;
+    }
+
+    .detail-answer {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+    }
+
+    /* ---------- FOOTER ---------- */
 
     footer {
-      border-top: 1px solid rgba(91, 31, 42, 0.18);
-      padding: 25px;
+      background: var(--brown);
+      color: var(--cream);
       text-align: center;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
+      padding: 55px 20px;
     }
 
-    @media (max-width: 600px) {
-      header {
-        padding: 16px 18px;
-      }
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 45px;
+      font-weight: 500;
+      color: #eadbc8;
+    }
+
+    footer p {
+      margin-top: 12px;
+      font-size: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bdaea1;
+    }
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 750px) {
 
       nav {
-        gap: 12px;
+        gap: 17px;
       }
 
-      main {
-        padding: 55px 20px 80px;
+      .story-header {
+        padding-top: 60px;
       }
 
-      h2 {
-        margin-top: 48px;
+      .story-header h1 {
+        letter-spacing: -2px;
+      }
+
+      .section {
+        margin-bottom: 38px;
+      }
+
+      .section h2 {
+        font-size: 32px;
+      }
+
+      .section p {
+        font-size: 18px;
+        line-height: 1.45;
+      }
+
+      .highlight {
+        font-size: 22px;
+      }
+
+      .rating {
+        font-size: 85px;
+      }
+
+      .verdict-details {
+        gap: 35px;
       }
     }
   </style>
@@ -205,161 +342,383 @@
 
 <body>
 
-<header>
-  <div class="record">Private Record · New York · Est. 2026</div>
-  <div class="logo">Just Between Us</div>
-  <div class="tagline">You didn't hear it from me.</div>
+  <div class="top-bar">
+    Private Record · New York · Est. 2026
+  </div>
+
+
+  <header>
+
+    <div class="location">
+      Manhattan · The Encounters
+    </div>
+
+    <div class="logo">
+      Just Between Us
+    </div>
+
+    <div class="tagline">
+      You didn't hear it from me.
+    </div>
+
+  </header>
+
 
   <nav>
+
     <a href="../index.html">Home</a>
+
     <a href="../encounters.html">The Encounters</a>
+
     <a href="../after-hours.html">After Hours</a>
+
     <a href="../debrief.html">The Debrief</a>
+
     <a href="../new-york.html">New York</a>
+
     <a href="../receipts.html">The Receipts</a>
-    <a href="../archives.html">The Archive</a>
+
+    <a href="../archive.html">The Archive</a>
+
   </nav>
-</header>
 
-<main>
 
-  <div class="eyebrow">Encounter No. 004 · September 2026 · New York</div>
+  <section class="story-header">
 
-  <h1>The Birthday Boy</h1>
+    <div class="eyebrow">
+      Encounter No. 004
+    </div>
 
-  <div class="subtitle">It was supposed to be an early girls' night.</div>
+    <h1>
+      The Birthday Boy
+    </h1>
 
-  <div class="intro">
-    It was supposed to be an early girls' night.
-  </div>
+    <div class="subtitle">
+      It was supposed to be an early girls' night.
+    </div>
 
-  <h2>The Girls' Night</h2>
+    <div class="meta">
+      September 2026 · New York
+    </div>
 
-  <p>We started at Sweet Linda's, doing exactly what girls' night is supposed to look like: sitting around a table, drinking pornstar martinis, and having a genuinely great time. We were about two cocktails in when we started contemplating a second location.</p>
+  </section>
 
-  <p>Unfortunately, a good old-fashioned nor'easter was happening outside. It wasn't actually that bad, but it was raining enough to make us question whether leaving our cozy little table was worth it. Eventually, we decided we'd survive and trekked down the block to Tom &amp; Jerry's.</p>
 
-  <p>Which brings me to an important clarification: the nor'easter is not, in fact, the name of the storm. I had to explain this to the Birthday Boy later, who is from New Orleans and apparently had no idea that a nor'easter is simply a type of storm.</p>
+  <main class="story">
 
-  <p>Anyway.</p>
 
-  <p>We got to Tom &amp; Jerry's and were greeted with a line. In the rain. A line in the rain is truly one of life's more humbling experiences. But we'd already made it this far, so we decided to wait it out.</p>
+    <section class="section">
 
-  <p>Eventually, we got inside.</p>
+      <div class="section-label">
+        The Girls' Night
+      </div>
 
-  <p>And wow.</p>
+      <p>
+        We started at Sweet Linda's, doing exactly what girls' night is supposed to look like: sitting around a table, drinking pornstar martinis, and having a genuinely great time. We were about two cocktails in when we started contemplating a second location.
+      </p>
 
-  <p>The men were seasoned. Older. Hot.</p>
+      <p>
+        Unfortunately, a good old-fashioned nor'easter was happening outside. It wasn't actually that bad, but it was raining enough to make us question whether leaving our cozy little table was worth it. Eventually, we decided we'd survive and trekked down the block to Tom &amp; Jerry's.
+      </p>
 
-  <p>We were all immediately very pleased with the decision to leave Sweet Linda's.</p>
+      <p>
+        Which brings me to an important clarification: the nor'easter is not, in fact, the name of the storm. I had to explain this to the Birthday Boy later, who is from New Orleans and apparently had no idea that a nor'easter is simply a type of storm.
+      </p>
 
-  <p>We got drinks and stood around for a bit, taking in our surroundings. Then, completely out of nowhere, a guy walked past us and screamed directly in our faces.</p>
+      <p>
+        Anyway.
+      </p>
 
-  <p>My roommate looked at him and went, <em>"Uh, why did you do that?"</em></p>
+      <p>
+        We got to Tom &amp; Jerry's and were greeted with a line. In the rain. A line in the rain is truly one of life's more humbling experiences. But we'd already made it this far, so we decided to wait it out.
+      </p>
 
-  <p>He goes, <em>"You guys should come smoke a cig."</em></p>
+      <p>
+        Eventually, we got inside.
+      </p>
 
-  <p>We looked at each other. Our drinks were full. We had literally just gotten them. We couldn't exactly bring them outside.</p>
+      <p>
+        And wow.
+      </p>
 
-  <p>And then, for reasons I still cannot fully explain, I made the executive decision to simply hand my drink to my roommate and follow this man outside.</p>
+      <p>
+        The men were seasoned. Older. Hot.
+      </p>
 
-  <h2>The Cigarette</h2>
+      <p>
+        We were all immediately very pleased with the decision to leave Sweet Linda's.
+      </p>
 
-  <p>Suddenly, it was just me and him. He gave me a cigarette and lit it for me with his matches, which had a naked woman on the box. Naturally.</p>
+      <p>
+        We got drinks and stood around for a bit, taking in our surroundings. Then, completely out of nowhere, a guy walked past us and screamed directly in our faces.
+      </p>
 
-  <p>We started talking, and he asked me a lot of questions about me. A <em>lot.</em> I didn't actually get nearly as much information out of him, but I liked his vibe. He had pretty eyes, scruffy brown hair, and just generally good energy. And then I found out he was born in Japan.</p>
+      <p>
+        My roommate looked at him and went, <em>"Uh, why did you do that?"</em>
+      </p>
 
-  <p>I love me a Wasian man.</p>
+      <p>
+        He goes, <em>"You guys should come smoke a cig."</em>
+      </p>
 
-  <p>We finished our cigarettes and went back inside, and I figured that was probably the end of the interaction. Cute random cigarette encounter. Fun story. Back to the girls.</p>
+      <p>
+        We looked at each other. Our drinks were full. We had literally just gotten them. We couldn't exactly bring them outside.
+      </p>
 
-  <p>Except he came back over to us.</p>
+      <p>
+        And then, for reasons I still cannot fully explain, I made the executive decision to simply hand my drink to my roommate and follow this man outside.
+      </p>
 
-  <p><em>"You guys should come meet my friends."</em></p>
+    </section>
 
-  <p>Okay. I liked that energy.</p>
 
-  <h2>The Birthday Boy</h2>
+    <section class="section">
 
-  <p>We met his friends and started blending into the group. Meanwhile, my two friends had somehow found themselves talking to two men who were... less than savory. They looked bored, they looked uninterested, and I simply was not going to participate in whatever was happening over there.</p>
+      <div class="section-label">
+        The Cigarette
+      </div>
 
-  <p>So I stood in the mix, minding my own business, until the Birthday Boy came back around. We started talking again, this time about what I was drinking, and somewhere in there I found out he had just turned 31.</p>
+      <p>
+        Suddenly, it was just me and him. He gave me a cigarette and lit it for me with his matches, which had a naked woman on the box. Naturally.
+      </p>
 
-  <p>It was his birthday.</p>
+      <p>
+        We started talking, and he asked me a lot of questions about me. A <em>lot.</em> I didn't actually get nearly as much information out of him, but I liked his vibe. He had pretty eyes, scruffy brown hair, and just generally good energy. And then I found out he was born in Japan.
+      </p>
 
-  <p>He was also drinking.</p>
+      <p>
+        I love me a Wasian man.
+      </p>
 
-  <p>And doing shrooms.</p>
+      <p>
+        We finished our cigarettes and went back inside, and I figured that was probably the end of the interaction. Cute random cigarette encounter. Fun story. Back to the girls.
+      </p>
 
-  <p>And Molly.</p>
+      <p>
+        Except he came back over to us.
+      </p>
 
-  <p>Hello?</p>
+      <p>
+        <em>"You guys should come meet my friends."</em>
+      </p>
 
-  <p>That's crazy.</p>
+      <p>
+        Okay. I liked that energy.
+      </p>
 
-  <p>But also, somehow, it was funny.</p>
+    </section>
 
-  <p>Eventually my friends escaped their respective questionable men and came back over. The Birthday Boy looked at all of us and decided we needed another cigarette.</p>
 
-  <p>Don't mind if I do.</p>
+    <section class="section">
 
-  <h2>One More Cigarette</h2>
+      <div class="section-label">
+        The Birthday Boy
+      </div>
 
-  <p>We all went outside together, and it was one of those moments where suddenly the whole night had become a little surreal. We'd gone out for girls' night, ended up at Tom &amp; Jerry's in the rain, and now we were standing outside smoking cigarettes with a men we'd met approximately an hour ago.</p>
+      <p>
+        We met his friends and started blending into the group. Meanwhile, my two friends had somehow found themselves talking to two men who were... less than savory. They looked bored, they looked uninterested, and I simply was not going to participate in whatever was happening over there.
+      </p>
 
-  <p>And honestly? We were having a great time.</p>
+      <p>
+        So I stood in the mix, minding my own business, until the Birthday Boy came back around. We started talking again, this time about what I was drinking, and somewhere in there I found out he had just turned 31.
+      </p>
 
-  <p>We finished up and went back inside, and I started talking to him again. He got my number and then asked me to hang out the next day. Apparently they were all going out for the football game, and I told him I'd forget about that so he better texted me:</p>
+      <p>
+        It was his birthday.
+      </p>
 
-  <p><strong>2 PM. Reservoir Bar.</strong></p>
+      <p>
+        He was also drinking.
+      </p>
 
-  <p>And then we kissed. Not a little polite bar kiss, either. A proper make-out. It was short, it was hot, and I liked it.</p>
+      <p>
+        And doing shrooms.
+      </p>
 
-  <h2>The Exit</h2>
+      <p>
+        And Molly.
+      </p>
 
-  <p>Eventually, he went to the bathroom. I reconvened with my girls, and we were ready to go. At this point, I had a strategy.</p>
+      <p>
+        Hello?
+      </p>
 
-  <p>I'm 24. He is 31. His friend was married for seven years. There were a lot of seasoned men in that bar, and suddenly I felt approximately twelve years old by comparison.</p>
+      <p>
+        That's crazy.
+      </p>
 
-  <p>So I decided to leave while I was still ahead. I wanted to make an impact. I wanted him to wonder. I wanted to keep him asking for more.</p>
+      <p>
+        But also, somehow, it was funny.
+      </p>
 
-  <p>So when he came back, I told him I had to go.</p>
+      <p>
+        Eventually my friends escaped their respective questionable men and came back over. The Birthday Boy looked at all of us and decided we needed another cigarette.
+      </p>
 
-  <p><em>"Where?"</em></p>
+      <p>
+        Don't mind if I do.
+      </p>
 
-  <p><em>"I just gotta go."</em></p>
+    </section>
 
-  <p>A little mysterious.</p>
 
-  <p>He kissed me goodbye, and I walked away.</p>
+    <section class="section">
 
-  <p>And then, because apparently the night wasn't finished with me yet, he followed me. He spun me around and kissed me again.</p>
+      <div class="section-label">
+        One More Cigarette
+      </div>
 
-  <p>Ugh.</p>
+      <p>
+        We all went outside together, and it was one of those moments where suddenly the whole night had become a little surreal. We'd gone out for girls' night, ended up at Tom &amp; Jerry's in the rain, and now we were standing outside smoking cigarettes with a men we'd met approximately an hour ago.
+      </p>
 
-  <p>So good.</p>
+      <p>
+        And honestly? We were having a great time.
+      </p>
 
-  <p>I walked outside, got into my cab, and immediately texted him:</p>
+      <p>
+        We finished up and went back inside, and I started talking to him again. He got my number and then asked me to hang out the next day. Apparently they were all going out for the football game, and I told him I'd forget about that so he better texted me:
+      </p>
 
-  <p><strong>See you tomorrow.</strong></p>
+      <div class="highlight">
+        2 PM. Reservoir Bar.
+      </div>
 
-  <p>He hearted it.</p>
+      <p>
+        And then we kissed. Not a little polite bar kiss, either. A proper make-out. It was short, it was hot, and I liked it.
+      </p>
 
-  <p>And that was that.</p>
+    </section>
 
-  <p>For the moment.</p>
 
-  <div class="closing">To be continued...</div>
+    <section class="section">
 
-  <div class="back">
-    <a href="../encounters.html">← Back to The Encounters</a>
-  </div>
+      <div class="section-label">
+        The Exit
+      </div>
 
-</main>
+      <p>
+        Eventually, he went to the bathroom. I reconvened with my girls, and we were ready to go. At this point, I had a strategy.
+      </p>
 
-<footer>
-  Just Between Us · Private Record · New York
-</footer>
+      <p>
+        I'm 24. He is 31. His friend was married for seven years. There were a lot of seasoned men in that bar, and suddenly I felt approximately twelve years old by comparison.
+      </p>
+
+      <p>
+        So I decided to leave while I was still ahead. I wanted to make an impact. I wanted him to wonder. I wanted to keep him asking for more.
+      </p>
+
+      <p>
+        So when he came back, I told him I had to go.
+      </p>
+
+      <p>
+        <em>"Where?"</em>
+      </p>
+
+      <p>
+        <em>"I just gotta go."</em>
+      </p>
+
+      <p>
+        A little mysterious.
+      </p>
+
+      <p>
+        He kissed me goodbye, and I walked away.
+      </p>
+
+      <p>
+        And then, because apparently the night wasn't finished with me yet, he followed me. He spun me around and kissed me again.
+      </p>
+
+      <p>
+        Ugh.
+      </p>
+
+      <p>
+        So good.
+      </p>
+
+      <p>
+        I walked outside, got into my cab, and immediately texted him:
+      </p>
+
+      <div class="highlight">
+        See you tomorrow.
+      </div>
+
+      <p>
+        He hearted it.
+      </p>
+
+      <p>
+        And that was that.
+      </p>
+
+      <p>
+        For the moment.
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+  <section class="verdict">
+
+    <div class="verdict-label">
+      The Verdict
+    </div>
+
+    <div class="rating">
+      TBD
+    </div>
+
+    <div class="verdict-text">
+      To be continued...
+    </div>
+
+    <div class="verdict-details">
+
+      <div>
+        <span class="detail-label">
+          Initial Impression
+        </span>
+
+        <span class="detail-answer">
+          Pretty eyes.
+        </span>
+      </div>
+
+      <div>
+        <span class="detail-label">
+          Status
+        </span>
+
+        <span class="detail-answer">
+          To be continued.
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <h2>
+      Just Between Us.
+    </h2>
+
+    <p>
+      New York · Dating · Life · Other Developments
+    </p>
+
+  </footer>
 
 </body>
 </html>
